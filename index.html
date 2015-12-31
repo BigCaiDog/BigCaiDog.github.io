@@ -306,12 +306,19 @@
 <p>然后我们把这个文件夹里面的文件都push到刚才新建那个项目就OK了。几分钟过后，就可以打开你的用户名.github.io看到你的博客了。</p>
 <h2 id="u6DFB_u52A0_u65B0_u6587_u7AE0"><a href="#u6DFB_u52A0_u65B0_u6587_u7AE0" class="headerlink" title="添加新文章"></a>添加新文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"name"</span></span><br></pre></td></tr></table></figure>
 <p>编辑name.md文件并保存，重新生成布置即可。</p>
-<h2 id="Register_on_Github-1"><a href="#Register_on_Github-1" class="headerlink" title="Register on Github"></a><a href="http://www.github.com/" target="_blank" rel="external">Register on Github</a></h2><h3 id="1-_Register_a_new_account"><a href="#1-_Register_a_new_account" class="headerlink" title="1. Register a new account."></a>1. Register a new account.</h3><h3 id="2-_Build_a_repository_named"><a href="#2-_Build_a_repository_named" class="headerlink" title="2. Build a repository named"></a>2. Build a repository named</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>##绑定域名<br>方法一：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如cnfeat.com。<br>方法二：到我的github仓库，点击右下角的「Download ZIP」，下载源文件，解压，找到CNAME文件，用记事本打开，将cnfeat.com修改成你的域名，放进Hexo\source目录下，用hexo命令提交上去。</p>
+<p>###DNS设置<br>用DNSpod，快，免费，稳定。<br>注册DNSpod，添加域名，如下图设置。<br><img src="http://i.imgur.com/a0fiGO8.png" alt=""></p>
+<p>其中A的两条记录指向的ip地址是github Pages的提供的ip<br>192.30.252.153<br>192.30.252.154<br>如博客不能登录，有可能是github更改了空间服务的ip地址，记得及时到在<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/" target="_blank" rel="external">GitHub Pages</a>查看最新的ip即可<br>www指定的记录是你在github注册的仓库。</p>
+<p>###去Godaddy修改DNS地址<br>更改godaddy的Nameservers为DNSpod的NameServers。<br><img src="http://i.imgur.com/LPZqQHc.jpg" alt=""><br><img src="http://i.imgur.com/ey7jqjH.png" alt=""></p>
+<p>##安装插件<br>添加sitemap和feed插件<br>$ npm install hexo-generator-sitemap<br>$ npm install hexo-generator-feed<br>修改_config.yml，增加以下内容</p>
+<p>###Extensions<br>Plugins:</p>
+<ul>
+<li>hexo-generator-feed</li>
+<li>hexo-generator-sitemap</li>
+</ul>
+<p>###Feed Atom<br>feed:<br>  type: atom<br>  path: atom.xml<br>  limit: 20</p>
+<p>###sitemap<br>sitemap:<br>  path: sitemap.xml<br>Hexo上传README文件<br>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？<br>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。</p>
+<p>###404页面<br>GitHub Pages有提供制作404页面的指引：<a href="https://help.github.com/articles/custom-404-pages/" target="_blank" rel="external">Custom 404 Pages</a>。<br>直接在根目录下创建自己的404.html或者404.md就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。<br>推荐使用<a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a>。</p>
 
             
           </span>
