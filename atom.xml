@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-01T08:19:03.532Z</updated>
+  <updated>2016-01-22T15:30:43.577Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TLS协议握手过程]]></title>
+    <link href="http://HITCaiDog.me/2016/01/22/TLS%E5%8D%8F%E8%AE%AE%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B/"/>
+    <id>http://HITCaiDog.me/2016/01/22/TLS协议握手过程/</id>
+    <published>2016-01-22T12:33:26.000Z</published>
+    <updated>2016-01-22T15:30:43.577Z</updated>
+    <content type="html"><![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
+<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。如图：</p>
+<p><img src="http://i.imgur.com/ObZObBx.png" alt=""></p>
+<p>##Server Hello</p>
+<p>服务器收到客户端的Client Hello数据包之后，根据客户端发来的加密套件列表，选择一个加密套件，也生成一个随机字符串返回给客户端。我们看到下图中的加密套件为，密钥交换算法使用ECDHE_RSA，对称加密算法使用AES_256_GCM_SHA384,如图：</p>
+<p><img src="http://i.imgur.com/Dv9xmKd.png" alt=""></p>
+<p>##Server Certificate</p>
+<p>接着服务器再返回证书列表，包括证书链及域名证书。返回的证书用来给客户端验证当前连接服务器的身份，防止中间人攻击。</p>
+<p>##Server Key Exchange</p>
+<p>Server Key Exchange协议包，由服务器返回，主要目的是与客户端交换用于数据对称加密的密钥。如图：</p>
+<p><img src="http://i.imgur.com/D8ga0P9.png" alt=""></p>
+<h2 id="Server_Hello_Done"><a href="#Server_Hello_Done" class="headerlink" title="Server Hello Done"></a>Server Hello Done</h2><p>服务器返回此协议数据，告诉客户端已经完成返回所需用于密钥交换的数据。服务器等待客户端响应。</p>
+<h2 id="Client_Key_Exchange"><a href="#Client_Key_Exchange" class="headerlink" title="Client Key Exchange"></a>Client Key Exchange</h2><p>客户端根据服务器返回的DH密钥数据生成DH公共数据也发给服务器，用来生成最终的pre-master-secret。如图：</p>
+<p><img src="http://i.imgur.com/KAhvJiD.png" alt=""></p>
+<p>##Change Cipher Spec</p>
+<p>此协议用于客户端和服务器相互告知也完成密钥交换过程，可以切换到对称加密过程。<br>到这里大概的TLS握手过程就结束了。为解决本文中的问题，还需要了解密钥交换的算法，RSA和Diffie–Hellman。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a]]>
+    </summary>
+    
+      <category term="fiddler" scheme="http://HITCaiDog.me/tags/fiddler/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Birthday]]></title>
