@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-01T08:19:03.532Z</updated>
+  <updated>2016-01-22T15:23:38.089Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[test]]></title>
+    <link href="http://HITCaiDog.me/2016/01/22/test/"/>
+    <id>http://HITCaiDog.me/2016/01/22/test/</id>
+    <published>2016-01-22T15:23:38.000Z</published>
+    <updated>2016-01-22T15:23:38.089Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Birthday]]></title>
