@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-23T03:07:53.583Z</updated>
+  <updated>2016-01-23T03:26:34.290Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -15,11 +15,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Git常用命令]]></title>
+    <link href="http://HITCaiDog.me/2016/01/23/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://HITCaiDog.me/2016/01/23/Git常用命令/</id>
+    <published>2016-01-23T03:24:07.000Z</published>
+    <updated>2016-01-23T03:26:34.290Z</updated>
+    <content type="html"><![CDATA[<p>test<a id="more"></a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>test]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://HITCaiDog.me/tags/Git/"/>
+    
+      <category term="Git" scheme="http://HITCaiDog.me/categories/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[TLS协议握手过程]]></title>
     <link href="http://HITCaiDog.me/2016/01/22/TLS%E5%8D%8F%E8%AE%AE%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B/"/>
     <id>http://HITCaiDog.me/2016/01/22/TLS协议握手过程/</id>
     <published>2016-01-22T12:33:26.000Z</published>
-    <updated>2016-01-23T03:07:53.583Z</updated>
+    <updated>2016-01-23T03:25:28.706Z</updated>
     <content type="html"><![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
 <h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。<a id="more"></a>如图：</p>
 <p><img src="http://i.imgur.com/ObZObBx.png" alt=""></p>
@@ -40,7 +59,7 @@
     
     </summary>
     
-      <category term="fiddler" scheme="http://HITCaiDog.me/tags/fiddler/"/>
+      <category term="TLS,协议分析" scheme="http://HITCaiDog.me/tags/TLS-%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/"/>
     
       <category term="协议" scheme="http://HITCaiDog.me/categories/%E5%8D%8F%E8%AE%AE/"/>
     
@@ -51,7 +70,7 @@
     <link href="http://HITCaiDog.me/2015/12/31/Birthday/"/>
     <id>http://HITCaiDog.me/2015/12/31/Birthday/</id>
     <published>2015-12-31T12:41:04.000Z</published>
-    <updated>2016-01-23T03:07:34.227Z</updated>
+    <updated>2016-01-23T03:25:39.595Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
 <h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a></p>
 <p><a href="http://git-scm.com/" target="_blank" rel="external">git</a></p>
@@ -122,7 +141,7 @@
     
     </summary>
     
-      <category term="Random" scheme="http://HITCaiDog.me/tags/Random/"/>
+      <category term="Random,教程" scheme="http://HITCaiDog.me/tags/Random-%E6%95%99%E7%A8%8B/"/>
     
       <category term="随笔" scheme="http://HITCaiDog.me/categories/%E9%9A%8F%E7%AC%94/"/>
     
