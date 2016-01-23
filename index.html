@@ -86,24 +86,6 @@
   </div>
 <![endif]-->
   
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_CN/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 
 
@@ -346,8 +328,9 @@
             TLS握手整个过程
 Client Hello这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。如图：
 
-##Server Hello
-服务器收到客户端的Client Hello数据包之后，根据客户
+Server Hello服务器收到客户端的Client Hello数据包之后，根据客户端发来的加密套件列表，选择一个加密套件，也生成一个随机字符串返回给客户端。我们看到下图中的加密套件为，密钥交换算法使用ECDHE_RSA，对称加密算法使用AES_256_GCM_SHA384,如图：
+
+Server Certificate接着服务
             ...
           </span>
           <div class="post-more-link text-center">
