@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-22T15:30:43.577Z</updated>
+  <updated>2016-01-23T02:43:12.951Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://HITCaiDog.me/2016/01/22/TLS%E5%8D%8F%E8%AE%AE%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B/"/>
     <id>http://HITCaiDog.me/2016/01/22/TLS协议握手过程/</id>
     <published>2016-01-22T12:33:26.000Z</published>
-    <updated>2016-01-22T15:30:43.577Z</updated>
+    <updated>2016-01-23T02:43:12.951Z</updated>
     <content type="html"><![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
 <h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。如图：</p>
 <p><img src="http://i.imgur.com/ObZObBx.png" alt=""></p>
@@ -50,7 +50,7 @@
     <link href="http://HITCaiDog.me/2015/12/31/Birthday/"/>
     <id>http://HITCaiDog.me/2015/12/31/Birthday/</id>
     <published>2015-12-31T12:41:04.000Z</published>
-    <updated>2016-01-01T08:19:03.532Z</updated>
+    <updated>2016-01-23T02:42:38.634Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
 <h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a></p>
 <p><a href="http://git-scm.com/" target="_blank" rel="external">git</a></p>
