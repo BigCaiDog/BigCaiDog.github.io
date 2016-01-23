@@ -1065,7 +1065,8 @@ pre .javascript .function {
   }
   .post-body pre,
   .post-body .highlight {
-    padding: 10px;
+    margin: 0 -20px;
+    padding: 10px 20px;
   }
   .post-body pre .gutter pre,
   .post-body .highlight .gutter pre {
@@ -1543,7 +1544,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0f9af9;
+  background: #9e9d83;
 }
 .sidebar-nav {
   margin: 0 0 20px;
