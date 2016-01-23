@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -26,19 +32,11 @@
 
 
 
-  
-    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  
-
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
-
-
-
-
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Random,教程," />
@@ -52,7 +50,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -85,10 +83,16 @@ HexoRun Git CMD,input1npm install -g hexo">
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Pisces',
-    sidebar: 'post',
-    motion: true
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -97,15 +101,6 @@ HexoRun Git CMD,input1npm install -g hexo">
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -123,11 +118,18 @@ HexoRun Git CMD,input1npm install -g hexo">
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
+      <div class="header-inner"><div class="site-meta custom-logo">
   
 
   <div class="custom-logo-site-title">
@@ -165,6 +167,26 @@ HexoRun Git CMD,input1npm install -g hexo">
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -187,17 +209,25 @@ HexoRun Git CMD,input1npm install -g hexo">
 
       
       
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            檢索
+          </a>
+        </li>
+      
     </ul>
   
 
   
     <div class="site-search">
       
-  
   <form class="site-search-form">
-    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-  </form>
-
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
 
 <script type="text/javascript">
   (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
@@ -219,8 +249,9 @@ HexoRun Git CMD,input1npm install -g hexo">
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -251,7 +282,10 @@ HexoRun Git CMD,input1npm install -g hexo">
 
         <div class="post-meta">
           <span class="post-time">
-            發表於
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">發表於</span>
             <time itemprop="dateCreated" datetime="2015-12-31T20:41:04+08:00" content="2015-12-31">
               2015-12-31
             </time>
@@ -259,7 +293,11 @@ HexoRun Git CMD,input1npm install -g hexo">
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/随笔/" itemprop="url" rel="index">
@@ -287,18 +325,29 @@ HexoRun Git CMD,input1npm install -g hexo">
 
           
 
+          
+          
+             <span id="/2015/12/31/Birthday/" class="leancloud_visitors" data-flag-title="Birthday">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">閱讀次數 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
 <h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a></p>
 <p><a href="http://git-scm.com/" target="_blank" rel="external">git</a></p>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Run_Git_CMD_2Cinput"><a href="#Run_Git_CMD_2Cinput" class="headerlink" title="Run Git CMD,input"></a>Run Git CMD,input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
@@ -359,7 +408,7 @@ HexoRun Git CMD,input1npm install -g hexo">
 <h3 id="404_u9875_u9762"><a href="#404_u9875_u9762" class="headerlink" title="404页面"></a>404页面</h3><p>GitHub Pages有提供制作404页面的指引：<a href="https://help.github.com/articles/custom-404-pages/" target="_blank" rel="external">Custom 404 Pages</a>。</p>
 <p>直接在根目录下创建自己的404.html或者404.md就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</p>
 <p>推荐使用<a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a>。</p>
-</span>
+
       
     </div>
 
@@ -422,15 +471,14 @@ HexoRun Git CMD,input1npm install -g hexo">
   </div>
 
 
-        </div>
-
-        
+          </div>
+          
 
   <p>热评文章</p>
   <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
 
 
-        
+          
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2015/12/31/Birthday/"
@@ -440,10 +488,9 @@ HexoRun Git CMD,input1npm install -g hexo">
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -471,10 +518,12 @@ HexoRun Git CMD,input1npm install -g hexo">
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="XinLe" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="XinLe" />
           <p class="site-author-name" itemprop="name">XinLe</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -484,10 +533,10 @@ HexoRun Git CMD,input1npm install -g hexo">
           </div>
 
           <div class="site-state-item site-state-categories">
-            
+            <a href="/categories">
               <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分類</span>
-              
+              </a>
           </div>
 
           <div class="site-state-item site-state-tags">
@@ -565,7 +614,9 @@ HexoRun Git CMD,input1npm install -g hexo">
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
           <div class="post-toc">
             
               
@@ -574,7 +625,9 @@ HexoRun Git CMD,input1npm install -g hexo">
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preparation_28For_Windows_29"><span class="nav-number">1.</span> <span class="nav-text">Preparation(For Windows)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">2.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_Git_CMD_2Cinput"><span class="nav-number">2.1.</span> <span class="nav-text">Run Git CMD,input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enter_the_directory_you_want_to_store_hexo_28such_as_E_3A_5Chexo_29_2Cthen_input"><span class="nav-number">2.2.</span> <span class="nav-text">Enter the directory you want to store hexo(such as E:\hexo),then input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change_theme_28not_essential_29"><span class="nav-number">2.3.</span> <span class="nav-text">Change theme(not essential)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generation"><span class="nav-number">2.4.</span> <span class="nav-text">Generation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Register_on_Github"><span class="nav-number">3.</span> <span class="nav-text">Register on Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH_Keys_28By_GitBash_29"><span class="nav-number">4.</span> <span class="nav-text">SSH Keys(By GitBash)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u68C0_u67E5_u7535_u8111_u4E0A_u73B0_u6709_u7684SSH_Keys"><span class="nav-number">4.1.</span> <span class="nav-text">检查电脑上现有的SSH Keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5907_u4EFD_u548C_u79FB_u9664_u539F_u6765_u7684SSH_Keys_u8BBE_u7F6E"><span class="nav-number">4.2.</span> <span class="nav-text">备份和移除原来的SSH Keys设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u751F_u6210_u65B0_u7684SSH_Keys"><span class="nav-number">4.3.</span> <span class="nav-text">生成新的SSH Keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0SSH_Keys_u5230Github"><span class="nav-number">4.4.</span> <span class="nav-text">添加SSH Keys到Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6D4B_u8BD5"><span class="nav-number">4.5.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u7F6E_u5E10_u53F7_u4FE1_u606F"><span class="nav-number">4.6.</span> <span class="nav-text">设置帐号信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u90E8_u7F72_u5230Github"><span class="nav-number">5.</span> <span class="nav-text">部署到Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6DFB_u52A0_u65B0_u6587_u7AE0"><span class="nav-number">6.</span> <span class="nav-text">添加新文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u7ED1_u5B9A_u57DF_u540D"><span class="nav-number">7.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS_u8BBE_u7F6E"><span class="nav-number">7.1.</span> <span class="nav-text">DNS设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u53BBGodaddy_u4FEE_u6539DNS_u5730_u5740"><span class="nav-number">7.2.</span> <span class="nav-text">去Godaddy修改DNS地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5B89_u88C5_u63D2_u4EF6"><span class="nav-number">8.</span> <span class="nav-text">安装插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Extensions"><span class="nav-number">8.1.</span> <span class="nav-text">Extensions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feed_Atom"><span class="nav-number">8.2.</span> <span class="nav-text">Feed Atom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sitemap"><span class="nav-number">8.3.</span> <span class="nav-text">sitemap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#404_u9875_u9762"><span class="nav-number">8.4.</span> <span class="nav-text">404页面</span></a></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
         </section>
       
 
@@ -582,7 +635,8 @@ HexoRun Git CMD,input1npm install -g hexo">
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -616,56 +670,48 @@ HexoRun Git CMD,input1npm install -g hexo">
     <div class="back-to-top"></div>
   </div>
 
+  
+
+
+  
+
+
+
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-
-  
-    
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"hitcaidog"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-    
-     
-
-
-    
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -745,7 +791,7 @@ HexoRun Git CMD,input1npm install -g hexo">
 
     function tocOverflowIndicator (indicator, action) {
       var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
+      var opacity = action === 'show' ? 1 : 0;
       $indicator.velocity ?
         $indicator.velocity('stop').velocity({
           opacity: opacity
@@ -799,7 +845,7 @@ HexoRun Git CMD,input1npm install -g hexo">
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -812,11 +858,12 @@ HexoRun Git CMD,input1npm install -g hexo">
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
+    NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
+
       if (CONFIG.sidebar === 'post') {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
+          NexT.utils.displaySidebar();
         }
       }
     };
@@ -825,13 +872,139 @@ HexoRun Git CMD,input1npm install -g hexo">
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hitcaidog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
 
   
   
 
   
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("boWfWWyzdoyT6OMuXKV1Tt1F-gzGzoHsz", "13DWnv7QdDVN9YHGUFG4esDV");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
 
 </body>
 </html>
