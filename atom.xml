@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-23T02:50:48.983Z</updated>
+  <updated>2016-01-23T03:07:53.583Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://HITCaiDog.me/2016/01/22/TLS%E5%8D%8F%E8%AE%AE%E6%8F%A1%E6%89%8B%E8%BF%87%E7%A8%8B/"/>
     <id>http://HITCaiDog.me/2016/01/22/TLS协议握手过程/</id>
     <published>2016-01-22T12:33:26.000Z</published>
-    <updated>2016-01-23T02:50:48.983Z</updated>
+    <updated>2016-01-23T03:07:53.583Z</updated>
     <content type="html"><![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
-<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。如图：</p>
+<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。<a id="more"></a>如图：</p>
 <p><img src="http://i.imgur.com/ObZObBx.png" alt=""></p>
 <h2 id="Server_Hello"><a href="#Server_Hello" class="headerlink" title="Server Hello"></a>Server Hello</h2><p>服务器收到客户端的Client Hello数据包之后，根据客户端发来的加密套件列表，选择一个加密套件，也生成一个随机字符串返回给客户端。我们看到下图中的加密套件为，密钥交换算法使用ECDHE_RSA，对称加密算法使用AES_256_GCM_SHA384,如图：</p>
 <p><img src="http://i.imgur.com/Dv9xmKd.png" alt=""></p>
@@ -35,7 +35,9 @@
 <h2 id="Change_Cipher_Spec"><a href="#Change_Cipher_Spec" class="headerlink" title="Change Cipher Spec"></a>Change Cipher Spec</h2><p>此协议用于客户端和服务器相互告知也完成密钥交换过程，可以切换到对称加密过程。<br>到这里大概的TLS握手过程就结束了。为解决本文中的问题，还需要了解密钥交换的算法，RSA和Diffie–Hellman。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a]]>
+    <![CDATA[<h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
+<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。]]>
+    
     </summary>
     
       <category term="fiddler" scheme="http://HITCaiDog.me/tags/fiddler/"/>
@@ -49,11 +51,12 @@
     <link href="http://HITCaiDog.me/2015/12/31/Birthday/"/>
     <id>http://HITCaiDog.me/2015/12/31/Birthday/</id>
     <published>2015-12-31T12:41:04.000Z</published>
-    <updated>2016-01-23T02:51:53.009Z</updated>
+    <updated>2016-01-23T03:07:34.227Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
 <h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/" target="_blank" rel="external">node.js</a></p>
 <p><a href="http://git-scm.com/" target="_blank" rel="external">git</a></p>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Run_Git_CMD_2Cinput"><a href="#Run_Git_CMD_2Cinput" class="headerlink" title="Run Git CMD,input"></a>Run Git CMD,input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="Enter_the_directory_you_want_to_store_hexo_28such_as_E_3A_5Chexo_29_2Cthen_input"><a href="#Enter_the_directory_you_want_to_store_hexo_28such_as_E_3A_5Chexo_29_2Cthen_input" class="headerlink" title="Enter the directory you want to store hexo(such as E:\hexo),then input"></a>Enter the directory you want to store hexo(such as E:\hexo),then input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <p>Hexo will automatically create all the files needed for the site in the target folder.</p>
 <h3 id="Change_theme_28not_essential_29"><a href="#Change_theme_28not_essential_29" class="headerlink" title="Change theme(not essential)"></a>Change theme(not essential)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next.git themes/hexo-theme-next</span><br></pre></td></tr></table></figure>
@@ -112,7 +115,11 @@
 <p>推荐使用<a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a>。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">HITCaiDog’s Blog</a>! This is my very first post. There are some impo]]>
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
+<h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/">node.js</a></p>
+<p><a href="http://git-scm.com/">git</a></p>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Run_Git_CMD_2Cinput"><a href="#Run_Git_CMD_2Cinput" class="headerlink" title="Run Git CMD,input"></a>Run Git CMD,input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>]]>
+    
     </summary>
     
       <category term="Random" scheme="http://HITCaiDog.me/tags/Random/"/>

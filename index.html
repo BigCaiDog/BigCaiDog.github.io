@@ -323,16 +323,8 @@
 
       
         
-          <span itemprop="articleBody">
-            
-            TLS握手整个过程
-Client Hello这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。如图：
-
-Server Hello服务器收到客户端的Client Hello数据包之后，根据客户端发来的加密套件列表，选择一个加密套件，也生成一个随机字符串返回给客户端。我们看到下图中的加密套件为，密钥交换算法使用ECDHE_RSA，对称加密算法使用AES_256_GCM_SHA384,如图：
-
-Server Certificate接着服务
-            ...
-          </span>
+          <h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
+<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/22/TLS协议握手过程/#more" rel="contents">
               阅读全文 &raquo;
