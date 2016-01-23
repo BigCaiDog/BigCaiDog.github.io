@@ -33,7 +33,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="TLS,协议分析," />
 
 
 
@@ -51,16 +51,24 @@
 
 
 
-<meta name="description" content="test">
+<meta name="description" content="TLS握手整个过程
+Client Hello这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常用命令">
-<meta property="og:url" content="http://HITCaiDog.me/2016/01/23/Git常用命令/index.html">
+<meta property="og:title" content="TLS协议握手过程">
+<meta property="og:url" content="http://HITCaiDog.me/2016/01/22/TLS协议握手过程/index.html">
 <meta property="og:site_name" content="HITCaiDog's Blog">
-<meta property="og:description" content="test">
-<meta property="og:updated_time" content="2016-01-23T03:26:34.290Z">
+<meta property="og:description" content="TLS握手整个过程
+Client Hello这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。">
+<meta property="og:image" content="http://i.imgur.com/bEyG2V7.png">
+<meta property="og:image" content="http://i.imgur.com/ObZObBx.png">
+<meta property="og:image" content="http://i.imgur.com/Dv9xmKd.png">
+<meta property="og:image" content="http://i.imgur.com/D8ga0P9.png">
+<meta property="og:image" content="http://i.imgur.com/KAhvJiD.png">
+<meta property="og:updated_time" content="2016-01-23T03:32:13.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常用命令">
-<meta name="twitter:description" content="test">
+<meta name="twitter:title" content="TLS协议握手过程">
+<meta name="twitter:description" content="TLS握手整个过程
+Client Hello这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。">
 
 
 
@@ -72,7 +80,7 @@
   };
 </script>
 
-  <title> Git常用命令 | HITCaiDog's Blog </title>
+  <title> TLS协议握手过程 | HITCaiDog's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -255,7 +263,7 @@
             
             
               
-                Git常用命令
+                TLS协议握手过程
               
             
           </h1>
@@ -264,8 +272,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-01-23T11:24:07+08:00" content="2016-01-23">
-              2016-01-23
+            <time itemprop="dateCreated" datetime="2016-01-22T20:33:26+08:00" content="2016-01-22">
+              2016-01-22
             </time>
           </span>
 
@@ -274,8 +282,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/协议/" itemprop="url" rel="index">
+                    <span itemprop="name">协议</span>
                   </a>
                 </span>
 
@@ -290,8 +298,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/23/Git常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/23/Git常用命令/" itemprop="commentsCount"></span>
+                <a href="/2016/01/22/TLS协议握手过程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/TLS协议握手过程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,7 +318,19 @@
       
 
       
-        <span itemprop="articleBody"><p>test<a id="more"></a></p>
+        <span itemprop="articleBody"><h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
+<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。<a id="more"></a>如图：</p>
+<p><img src="http://i.imgur.com/ObZObBx.png" alt=""></p>
+<h2 id="Server_Hello"><a href="#Server_Hello" class="headerlink" title="Server Hello"></a>Server Hello</h2><p>服务器收到客户端的Client Hello数据包之后，根据客户端发来的加密套件列表，选择一个加密套件，也生成一个随机字符串返回给客户端。我们看到下图中的加密套件为，密钥交换算法使用ECDHE_RSA，对称加密算法使用AES_256_GCM_SHA384,如图：</p>
+<p><img src="http://i.imgur.com/Dv9xmKd.png" alt=""></p>
+<h2 id="Server_Certificate"><a href="#Server_Certificate" class="headerlink" title="Server Certificate"></a>Server Certificate</h2><p>接着服务器再返回证书列表，包括证书链及域名证书。返回的证书用来给客户端验证当前连接服务器的身份，防止中间人攻击。</p>
+<p>##Server Key Exchange</p>
+<p>Server Key Exchange协议包，由服务器返回，主要目的是与客户端交换用于数据对称加密的密钥。如图：</p>
+<p><img src="http://i.imgur.com/D8ga0P9.png" alt=""></p>
+<h2 id="Server_Hello_Done"><a href="#Server_Hello_Done" class="headerlink" title="Server Hello Done"></a>Server Hello Done</h2><p>服务器返回此协议数据，告诉客户端已经完成返回所需用于密钥交换的数据。服务器等待客户端响应。</p>
+<h2 id="Client_Key_Exchange"><a href="#Client_Key_Exchange" class="headerlink" title="Client Key Exchange"></a>Client Key Exchange</h2><p>客户端根据服务器返回的DH密钥数据生成DH公共数据也发给服务器，用来生成最终的pre-master-secret。如图：</p>
+<p><img src="http://i.imgur.com/KAhvJiD.png" alt=""></p>
+<h2 id="Change_Cipher_Spec"><a href="#Change_Cipher_Spec" class="headerlink" title="Change Cipher Spec"></a>Change Cipher Spec</h2><p>此协议用于客户端和服务器相互告知也完成密钥交换过程，可以切换到对称加密过程。<br>到这里大概的TLS握手过程就结束了。为解决本文中的问题，还需要了解密钥交换的算法，RSA和Diffie–Hellman。</p>
 </span>
       
     </div>
@@ -319,7 +339,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/TLS/" rel="tag">#TLS</a>
+          
+            <a href="/tags/协议分析/" rel="tag">#协议分析</a>
           
         </div>
       
@@ -328,13 +350,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/22/TLS协议握手过程/" rel="next" title="TLS协议握手过程">
-                <i class="fa fa-chevron-left"></i> TLS协议握手过程
+              <a href="/2015/12/31/Birthday/" rel="next" title="Birthday">
+                <i class="fa fa-chevron-left"></i> Birthday
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/23/Git常用命令/" rel="prev" title="Git常用命令">
+                Git常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -349,10 +375,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/23/Git常用命令/"
-     data-title="Git常用命令"
+        <div class="ds-share flat" data-thread-key="2016/01/22/TLS协议握手过程/"
+     data-title="TLS协议握手过程"
      data-content=""
-     data-url="http://HITCaiDog.me/2016/01/23/Git常用命令/">
+     data-url="http://HITCaiDog.me/2016/01/22/TLS协议握手过程/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -383,8 +409,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/23/Git常用命令/"
-           data-title="Git常用命令" data-url="http://HITCaiDog.me/2016/01/23/Git常用命令/">
+      <div class="ds-thread" data-thread-key="2016/01/22/TLS协议握手过程/"
+           data-title="TLS协议握手过程" data-url="http://HITCaiDog.me/2016/01/22/TLS协议握手过程/">
       </div>
     
   </div>
@@ -523,7 +549,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><span class="nav-number">1.</span> <span class="nav-text">TLS握手整个过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client_Hello"><span class="nav-number">2.</span> <span class="nav-text">Client Hello</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Server_Hello"><span class="nav-number">3.</span> <span class="nav-text">Server Hello</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Server_Certificate"><span class="nav-number">4.</span> <span class="nav-text">Server Certificate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Server_Hello_Done"><span class="nav-number">5.</span> <span class="nav-text">Server Hello Done</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client_Key_Exchange"><span class="nav-number">6.</span> <span class="nav-text">Client Key Exchange</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Change_Cipher_Spec"><span class="nav-number">7.</span> <span class="nav-text">Change Cipher Spec</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
