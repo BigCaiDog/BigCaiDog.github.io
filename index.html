@@ -376,7 +376,7 @@ f.close()            关闭URL连接
 f.info()             返回映射对象，带有与URL关联的元信息。对HTTP来讲，返回的服务器响应包含HTTP报头。对于FTP来说，返回的报头包含&apos;content-length&apos;，对于本地文件来说，返回的报头包含&apos;content-length&apos;和&apos;content-type&apos;字段
 f.getcode()          返回整型HTTP响应代码，例如，成功时返回200，未找到文件返回404
 f.geturl()           返回所返回数据的真实URL
-</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A" class="headerlink" title="几处实例解析："></a>几处实例解析：</h3><pre><code>import urllib2
+</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790" class="headerlink" title="几处实例解析"></a>几处实例解析</h3><pre><code>import urllib2
 
 response = urllib2.urlopen(&apos;http://www.douban.com&apos;)
 html = response.read()

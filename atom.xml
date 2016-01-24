@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-24T14:49:40.119Z</updated>
+  <updated>2016-01-24T14:52:04.139Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://HITCaiDog.me/2016/01/24/urllib2%E6%A8%A1%E5%9D%97%E3%80%81cookielib%E6%A8%A1%E5%9D%97%E5%8F%8A%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/"/>
     <id>http://HITCaiDog.me/2016/01/24/urllib2模块、cookielib模块及模拟登录/</id>
     <published>2016-01-24T11:53:16.000Z</published>
-    <updated>2016-01-24T14:49:40.119Z</updated>
+    <updated>2016-01-24T14:52:04.139Z</updated>
     <content type="html"><![CDATA[<h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
 <blockquote>
 <p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。</p>
@@ -40,7 +40,7 @@ f.close()            关闭URL连接
 f.info()             返回映射对象，带有与URL关联的元信息。对HTTP来讲，返回的服务器响应包含HTTP报头。对于FTP来说，返回的报头包含&apos;content-length&apos;，对于本地文件来说，返回的报头包含&apos;content-length&apos;和&apos;content-type&apos;字段
 f.getcode()          返回整型HTTP响应代码，例如，成功时返回200，未找到文件返回404
 f.geturl()           返回所返回数据的真实URL
-</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A" class="headerlink" title="几处实例解析："></a>几处实例解析：</h3><pre><code>import urllib2
+</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790" class="headerlink" title="几处实例解析"></a>几处实例解析</h3><pre><code>import urllib2
 
 response = urllib2.urlopen(&apos;http://www.douban.com&apos;)
 html = response.read()
