@@ -68,7 +68,7 @@
 
 注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用url">
 <meta property="og:image" content="http://i.imgur.com/mHU9T66.png">
-<meta property="og:updated_time" content="2016-01-24T14:52:04.139Z">
+<meta property="og:updated_time" content="2016-01-24T16:18:32.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="urllib2模块、cookielib模块及模拟登录">
 <meta name="twitter:description" content="urllib2模块urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。
@@ -444,20 +444,35 @@ urllib2.install_opener(opener)
 <h2 id="FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="FileCookieJar(filename, delayload = None, policy = None)"></a>FileCookieJar(filename, delayload = None, policy = None)</h2><p>创建FileCookieJar实例，检索cookie信息并将cookie存储到文件中。filename是存储cookie的文件名。delayload为True时支持延迟访问文件，即只有在需要时才读文件或在文件中存储数据。</p>
 <h2 id="MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="MozillaCookieJar(filename, delayload = None, policy = None)"></a>MozillaCookieJar(filename, delayload = None, policy = None)</h2><p>创建与Mozilla浏览器cookies.txt兼容的FileCookieJar实例。</p>
 <h2 id="LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="LWPCookieJar(filename, delayload = None, policy = None)"></a>LWPCookieJar(filename, delayload = None, policy = None)</h2><p>创建与libwww-per的Set-Cookie3文件格式兼容的FileCookieJar实例。</p>
-<h1 id="u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><a href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B" class="headerlink" title="模拟登录实例"></a>模拟登录实例</h1><pre><code>#! /usr/bin/env python
-#coding=utf-8
+<h1 id="u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><a href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B" class="headerlink" title="模拟登录实例"></a>模拟登录实例</h1><h2 id="u6A21_u62DF_u767B_u5F55_u4EBA_u4EBA_u7F51"><a href="#u6A21_u62DF_u767B_u5F55_u4EBA_u4EBA_u7F51" class="headerlink" title="模拟登录人人网"></a>模拟登录人人网</h2><pre><code>#! /usr/bin/env python
+# -*- coding:utf-8 -*-
 import urllib2
 import urllib
 import cookielib
 
-data = {&quot;email&quot;: &quot;username&quot;, &quot;password&quot;: &quot;passwd&quot;}  #登陆用户名和密码
-post_data = urllib.urlencode(data)
-cookie = cookielib.CookieJar()
+data = {&quot;email&quot;: &quot;username&quot;, &quot;password&quot;: &quot;passwd&quot;, &quot;autoLogin&quot;:&quot;true&quot;}  #登陆用户名和密码
+post_data = urllib.urlencode(data) # urllib进行编码
+cookie = cookielib.MozillaCookieJar(&apos;cookies.txt&apos;) # 初始化一个CookieJar来处理Cookie
 opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+urllib2.install_opener(opener)
 headers = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
 request = urllib2.Request(&quot;http://www.renren.com/PLogin.do&quot;,post_data,headers)
-content = opener.open(req)
-print content.read().decode(&quot;utf-8&quot;).encode(&quot;gbk&quot;)
+content = opener.open(request)
+cookie.save() #保存cookie
+print content.read()
+</code></pre><h2 id="u5229_u7528cookie_u767B_u5F55_u4EBA_u4EBA_u7F51"><a href="#u5229_u7528cookie_u767B_u5F55_u4EBA_u4EBA_u7F51" class="headerlink" title="利用cookie登录人人网"></a>利用cookie登录人人网</h2><pre><code>#! /usr/bin/env python
+# -*- coding:utf-8 -*-
+import urllib2
+import cookielib
+
+cookie = cookielib.MozillaCookieJar() # 初始化一个CookieJar来处理Cookie
+cookie.load(&apos;cookies.txt&apos;,  ignore_discard = True,  ignore_expires = True) #读取已保存的cookie
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+urllib2.install_opener(opener)
+header = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
+request = urllib2.Request(&quot;http://www.renren.com&quot;,headers = header)
+content = opener.open(request)
+print content.read()
 </code></pre>
       
     </div>
@@ -677,7 +692,7 @@ print content.read().decode(&quot;utf-8&quot;).encode(&quot;gbk&quot;)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib2_u6A21_u5757"><span class="nav-number">1.</span> <span class="nav-text">urllib2模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#urlopen_28_29"><span class="nav-number">1.1.</span> <span class="nav-text">urlopen()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790"><span class="nav-number">1.1.2.</span> <span class="nav-text">几处实例解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5B9A_u4E49Opener"><span class="nav-number">1.2.</span> <span class="nav-text">自定义Opener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">1.2.2.</span> <span class="nav-text">几种相对复杂情况的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie_u5904_u7406_uFF1A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">cookie处理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5BC6_u7801_u9A8C_u8BC1"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">密码验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4EE3_u7406"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">代理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookielib_u6A21_u5757"><span class="nav-number">2.</span> <span class="nav-text">cookielib模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CookieJar_28_29"><span class="nav-number">2.1.</span> <span class="nav-text">CookieJar()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.2.</span> <span class="nav-text">FileCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.3.</span> <span class="nav-text">MozillaCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.4.</span> <span class="nav-text">LWPCookieJar(filename, delayload = None, policy = None)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><span class="nav-number">3.</span> <span class="nav-text">模拟登录实例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib2_u6A21_u5757"><span class="nav-number">1.</span> <span class="nav-text">urllib2模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#urlopen_28_29"><span class="nav-number">1.1.</span> <span class="nav-text">urlopen()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790"><span class="nav-number">1.1.2.</span> <span class="nav-text">几处实例解析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5B9A_u4E49Opener"><span class="nav-number">1.2.</span> <span class="nav-text">自定义Opener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">1.2.2.</span> <span class="nav-text">几种相对复杂情况的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie_u5904_u7406_uFF1A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">cookie处理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5BC6_u7801_u9A8C_u8BC1"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">密码验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4EE3_u7406"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">代理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookielib_u6A21_u5757"><span class="nav-number">2.</span> <span class="nav-text">cookielib模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CookieJar_28_29"><span class="nav-number">2.1.</span> <span class="nav-text">CookieJar()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.2.</span> <span class="nav-text">FileCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.3.</span> <span class="nav-text">MozillaCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.4.</span> <span class="nav-text">LWPCookieJar(filename, delayload = None, policy = None)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><span class="nav-number">3.</span> <span class="nav-text">模拟登录实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#u6A21_u62DF_u767B_u5F55_u4EBA_u4EBA_u7F51"><span class="nav-number">3.1.</span> <span class="nav-text">模拟登录人人网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5229_u7528cookie_u767B_u5F55_u4EBA_u4EBA_u7F51"><span class="nav-number">3.2.</span> <span class="nav-text">利用cookie登录人人网</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
