@@ -247,6 +247,15 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
 
     
       
@@ -270,8 +279,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/01/23/Git常用命令/" itemprop="url">
-                  Git常用命令
+                <a class="post-title-link" href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" itemprop="url">
+                  urllib2模块、cookielib模块及模拟登录
                 </a>
               
             
@@ -284,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-23T11:24:07+08:00" content="2016-01-23">
-              2016-01-23
+            <time itemprop="dateCreated" datetime="2016-01-24T19:53:16+08:00" content="2016-01-24">
+              2016-01-24
             </time>
           </span>
 
@@ -298,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -314,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/23/Git常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/23/Git常用命令/" itemprop="commentsCount"></span>
+                <a href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/urllib2模块、cookielib模块及模拟登录/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,7 +334,7 @@
 
           
           
-             <span id="/2016/01/23/Git常用命令/" class="leancloud_visitors" data-flag-title="Git常用命令">
+             <span id="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" class="leancloud_visitors" data-flag-title="urllib2模块、cookielib模块及模拟登录">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -346,259 +355,125 @@
 
       
         
-          <p>转自<a href="http://notes.xiamo.tk/2015-06-29-Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">夏末’S NOTE</a></p>
-<h2 id="u57FA_u672C_u914D_u7F6E_u547D_u4EE4"><a href="#u57FA_u672C_u914D_u7F6E_u547D_u4EE4" class="headerlink" title="基本配置命令"></a>基本配置命令</h2><h3 id="Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868"><a href="#Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868" class="headerlink" title="Git常用命令速查表"></a>Git常用命令速查表</h3><p><img src="http://i.imgur.com/dHE4dkR.jpg" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/23/Git常用命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/22/TLS协议握手过程/" itemprop="url">
-                  TLS协议握手过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-22T20:33:26+08:00" content="2016-01-22">
-              2016-01-22
-            </time>
-          </span>
-
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/协议/" itemprop="url" rel="index">
-                    <span itemprop="name">协议</span>
-                  </a>
-                </span>
+            <h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
+<blockquote>
+<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。</p>
+</blockquote>
+<h2 id="urlopen_28_29"><a href="#urlopen_28_29" class="headerlink" title="urlopen()"></a>urlopen()</h2><h3 id="u57FA_u672C_u4ECB_u7ECD"><a href="#u57FA_u672C_u4ECB_u7ECD" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urlopen()打开一个给定的URL字符串与Web连接，并返回文件类的对象，是最简单的请求方式。</p>
+<pre><code>urlopen(url[,data[,timeout]])
+</code></pre><blockquote>
+<p>其中url可以是url字符串，也可以是urllib2.Request类的实例。</p>
+<p>data是经过编码的POST数据(一般使用urllib.urlencode()进行编码)。</p>
+<p>timeout是可选的超时设置(单位：秒)，只对HTTP、HTTPS、FTP、FTPS有效。通过urlopen()函数是设置超时时间的最简单的方式，还可以通过socket模块或urllib2模块设置</p>
+</blockquote>
+<p>urlopen()一旦连接成功，将会返回一个文件类型对象，就像在目标路径打开了一个可读文件。假设文件对象是f，则其将支持可读方法，如f.read()、f.readline()、f.readlines()、f.close()、f.fileno()。</p>
+<pre><code>f.read([nbytes])     以字符串形式读取全部或nbytes个字节的数据
+f.readline()         以字符串形式读取单行数据
+f.readlines()        读取所有行并返回列表
+f.fileno()           返回文件句柄(整数描述符)
+f.close()            关闭URL连接
+f.info()             返回映射对象，带有与URL关联的元信息。对HTTP来讲，返回的服务器响应包含HTTP报头。对于FTP来说，返回的报头包含&apos;content-length&apos;，对于本地文件来说，返回的报头包含&apos;content-length&apos;和&apos;content-type&apos;字段
+f.getcode()          返回整型HTTP响应代码，例如，成功时返回200，未找到文件返回404
+f.geturl()           返回所返回数据的真实URL
+</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A" class="headerlink" title="几处实例解析："></a>几处实例解析：</h3><pre><code>import urllib2
 
-                
-                
+response = urllib2.urlopen(&apos;http://www.douban.com&apos;)
+html = response.read()
+</code></pre><p>其中<code>response = urllib2.urlopen(&#39;http://www.douban.com&#39;)</code>实际上也可以看作：</p>
+<pre><code>request = urllib2.Request(&quot;http://www.douban.com&quot;)
+response = urllib2.urlopen(request)
+</code></pre><p>POST:</p>
+<pre><code>import urllib
+import urllib2
 
-              
-            </span>
+url = &apos;http://www.douban.com&apos;
+info = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
+data = urllib.urlencode(info)
+request = urllib2.Request(url, data)
+response = urllib2.urlopen(request)
+page = response.read()
+</code></pre><p>伪装浏览器：</p>
+<pre><code>import urllib
+import urllib2
+
+url = &apos;http://www.douban.com&apos;
+user_agent = &apos;Mozilla/5.0 (Windows NT 6.1; WOW64)&apos;
+values = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
+header = {&apos;User-Agent&apos;:user_agent}
+
+data = urllib.urlencode(values)
+request = urllib2.Request(url, data, header)
+response = urllib2.urlopen(request)
+page = response.read()
+</code></pre><h2 id="u81EA_u5B9A_u4E49Opener"><a href="#u81EA_u5B9A_u4E49Opener" class="headerlink" title="自定义Opener"></a>自定义Opener</h2><h3 id="u57FA_u672C_u4ECB_u7ECD-1"><a href="#u57FA_u672C_u4ECB_u7ECD-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urllib2模块最强大的部分莫过于其的Opener，基本的urlopen()函数不支持验证、Cookie或其它HTTP高级功能。而通过build_opener()函数建立自定义Opener对象则可以支持这些功能。</p>
+<pre><code>build_opener([handler1 [, handler2, ……]])
+</code></pre><p>要打开URL，可构建自定义opener对象。参数handler1、handler2……都是特殊处理程序对象的实例。这些处理程序的目的是向得到的opener对象添加各种功能。可用的处理程序对象如下所示：</p>
+<pre><code>CacheFTPHandler         具有持久FTP连接的FTP处理程序
+FileHandler             打开本地文件
+FTPHandler              通过FTP打开URL
+HTTPBasicAuthHandler    基本的HTTP验证处理
+HTTPCookieProcessor     处理HTTP Cookie
+HTTPDefaultErrorHandler 通过引发HTTPError异常来处理HTTP错误
+HTTPDigestAuthHandler   HTTP摘要验证处理
+HTTPHandler             通过HTTP打开URL
+HTTPRedirectHandler     处理HTTP重定向
+HTTPSHandler            通过安全HTTP打开URL
+ProxyHandler            通过代理重定向请求
+ProxyBasicAuthHandler   基本的代理验证
+ProxyDigestAuthHandler  摘要代理验证
+UnknownHandler          处理所有未知URL的处理程序
+</code></pre><blockquote>
+<p>build_opener()返回的对象具有open(url[, data[, timeout]])方法，作用是根据各种处理程序提供的规则打开URL。</p>
+</blockquote>
+<pre><code>install_opener(opener)
+</code></pre><p>安装opener作为urlopen()使用的全局URL opener，即意味着以后调用urlopen()时都会使用安装的opener对象。opener通常是build_opener()创建的opener对象。</p>
+<h3 id="u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="几种相对复杂情况的解决方法"></a>几种相对复杂情况的解决方法</h3><h4 id="cookie_u5904_u7406_uFF1A"><a href="#cookie_u5904_u7406_uFF1A" class="headerlink" title="cookie处理："></a>cookie处理：</h4><p>如果要管理HTTP cookie，需要创建添加了HTTPCookieProcessor处理程序的opener对象。默认情况下，HTTPCookieProcessor使用CookieJar对象，将不同类型的CookieJar对象作为HTTPCookieProcessor的参数提供，可支持不同的cookie处理。</p>
+<pre><code>cookie = cookielib.MozillaCookieJar()
+cookiehand = HTTPCookieProcessor(cookie)
+opener = urllib2.build_opener(cookiehand)
+u = opener.open(url)
+</code></pre><h4 id="u5BC6_u7801_u9A8C_u8BC1"><a href="#u5BC6_u7801_u9A8C_u8BC1" class="headerlink" title="密码验证"></a>密码验证</h4><pre><code>import urllib2
+
+auth = urllib2.HTTPBasicAuthHandler()
+auth.add_password(realm, url, username, passwd) #realm是与验证相关联的名称或描述信息(如:Administrator)，取决于服务器。
+opener = urllib2.build_opener(auth)
+u = opener.open(URL)
+</code></pre><h4 id="u4EE3_u7406"><a href="#u4EE3_u7406" class="headerlink" title="代理"></a>代理</h4><p>urllib2会自动检测代理设置，默认使用环境变量http_proxy来设置HTTP Proxy。通常情况下是有帮助的，但是某些情况下也可能会造成一些麻烦（因为通过代理获取本地URL资源时会被阻止，因此如果正在通过代理访问internet，则使用脚本测试本地服务器时必须阻止urllib2模块使用代理）。因此，如果想在程序中明确Proxy的使用而不受环境变量的影响，可以创建ProxyHandler实例，并将实例作为build_opener()的参数来实现。</p>
+<pre><code>import urllib2
+
+enable_proxy = True
+proxy_handler = urllib2.ProxyHandler({&apos;http&apos;:&apos;http://some-proxy.com:8080&apos;})
+null_proxy_handler = urllib2.ProxyHandler({})
+
+if enable_proxy:
+    opener = urllib2.build_opener(proxy_handler)
+else:
+    opener = urllib2.build_opener(null_proxy_handler)
+
+urllib2.install_opener(opener)
+</code></pre><h1 id="cookielib_u6A21_u5757"><a href="#cookielib_u6A21_u5757" class="headerlink" title="cookielib模块"></a>cookielib模块</h1><p>cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问internet资源。例如可以利用本模块的CookieJar类的对象来捕获cookie并在后续连接请求是重新改送。cookielib模块用到的对象主要有以下几个：CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJar。关系如下：</p>
+<p><img src="http://i.imgur.com/mHU9T66.png" alt=""></p>
+<h2 id="CookieJar_28_29"><a href="#CookieJar_28_29" class="headerlink" title="CookieJar()"></a>CookieJar()</h2><p>管理HTTP cookie值、存储HTTP请求生成的cookie、向传出的HTTP请求添加cookie的对象。整个cookie都存储在内存中，对CookieJar实例进行垃圾回收后cookie也将丢失。</p>
+<h2 id="FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="FileCookieJar(filename, delayload = None, policy = None)"></a>FileCookieJar(filename, delayload = None, policy = None)</h2><p>创建FileCookieJar实例，检索cookie信息并将cookie存储到文件中。filename是存储cookie的文件名。delayload为True时支持延迟访问文件，即只有在需要时才读文件或在文件中存储数据。</p>
+<h2 id="MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="MozillaCookieJar(filename, delayload = None, policy = None)"></a>MozillaCookieJar(filename, delayload = None, policy = None)</h2><p>创建与Mozilla浏览器cookies.txt兼容的FileCookieJar实例。</p>
+<h2 id="LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="LWPCookieJar(filename, delayload = None, policy = None)"></a>LWPCookieJar(filename, delayload = None, policy = None)</h2><p>创建与libwww-per的Set-Cookie3文件格式兼容的FileCookieJar实例。</p>
+<h1 id="u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><a href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B" class="headerlink" title="模拟登录实例"></a>模拟登录实例</h1><pre><code>#! /usr/bin/env python
+#coding=utf-8
+import urllib2
+import urllib
+import cookielib
+
+data = {&quot;email&quot;: &quot;username&quot;, &quot;password&quot;: &quot;passwd&quot;}  #登陆用户名和密码
+post_data = urllib.urlencode(data)
+cookie = cookielib.CookieJar()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+headers = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
+request = urllib2.Request(&quot;http://www.renren.com/PLogin.do&quot;,post_data,headers)
+content = opener.open(req)
+print content.read().decode(&quot;utf-8&quot;).encode(&quot;gbk&quot;)
+</code></pre>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/22/TLS协议握手过程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/TLS协议握手过程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/01/22/TLS协议握手过程/" class="leancloud_visitors" data-flag-title="TLS协议握手过程">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
-<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/22/TLS协议握手过程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/31/Birthday/" itemprop="url">
-                  Birthday
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-31T20:41:04+08:00" content="2015-12-31">
-              2015-12-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/31/Birthday/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/Birthday/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/12/31/Birthday/" class="leancloud_visitors" data-flag-title="Birthday">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="http://hexo.io/">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
-<h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/">node.js</a></p>
-<p><a href="http://git-scm.com/">git</a></p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Run_Git_CMD_2Cinput"><a href="#Run_Git_CMD_2Cinput" class="headerlink" title="Run Git CMD,input"></a>Run Git CMD,input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/31/Birthday/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -659,21 +534,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

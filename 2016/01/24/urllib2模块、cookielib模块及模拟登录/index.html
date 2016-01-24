@@ -39,7 +39,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git," />
+  <meta name="keywords" content="cookielib,python,urllib2,爬虫," />
 
 
 
@@ -57,21 +57,23 @@
 
 
 
-<meta name="description" content="转自夏末’S NOTE
-基本配置命令Git常用命令速查表">
+<meta name="description" content="urllib2模块urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。
+
+注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用url">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git常用命令">
-<meta property="og:url" content="http://HITCaiDog.me/2016/01/23/Git常用命令/index.html">
+<meta property="og:title" content="urllib2模块、cookielib模块及模拟登录">
+<meta property="og:url" content="http://HITCaiDog.me/2016/01/24/urllib2模块、cookielib模块及模拟登录/index.html">
 <meta property="og:site_name" content="HITCaiDog's Blog">
-<meta property="og:description" content="转自夏末’S NOTE
-基本配置命令Git常用命令速查表">
-<meta property="og:image" content="http://i.imgur.com/dHE4dkR.jpg">
-<meta property="og:image" content="http://i.imgur.com/Jbr9CJ6.jpg">
-<meta property="og:updated_time" content="2016-01-23T11:21:08.123Z">
+<meta property="og:description" content="urllib2模块urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。
+
+注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用url">
+<meta property="og:image" content="http://i.imgur.com/mHU9T66.png">
+<meta property="og:updated_time" content="2016-01-24T14:49:40.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git常用命令">
-<meta name="twitter:description" content="转自夏末’S NOTE
-基本配置命令Git常用命令速查表">
+<meta name="twitter:title" content="urllib2模块、cookielib模块及模拟登录">
+<meta name="twitter:description" content="urllib2模块urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。
+
+注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用url">
 
 
 
@@ -89,7 +91,7 @@
   };
 </script>
 
-  <title> Git常用命令 | HITCaiDog's Blog </title>
+  <title> urllib2模块、cookielib模块及模拟登录 | HITCaiDog's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +269,7 @@
             
             
               
-                Git常用命令
+                urllib2模块、cookielib模块及模拟登录
               
             
           </h1>
@@ -279,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-23T11:24:07+08:00" content="2016-01-23">
-              2016-01-23
+            <time itemprop="dateCreated" datetime="2016-01-24T19:53:16+08:00" content="2016-01-24">
+              2016-01-24
             </time>
           </span>
 
@@ -293,8 +295,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -309,8 +311,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/23/Git常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/23/Git常用命令/" itemprop="commentsCount"></span>
+                <a href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/urllib2模块、cookielib模块及模拟登录/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,7 +322,7 @@
 
           
           
-             <span id="/2016/01/23/Git常用命令/" class="leancloud_visitors" data-flag-title="Git常用命令">
+             <span id="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" class="leancloud_visitors" data-flag-title="urllib2模块、cookielib模块及模拟登录">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,102 +342,123 @@
       
 
       
-        <p>转自<a href="http://notes.xiamo.tk/2015-06-29-Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html" target="_blank" rel="external">夏末’S NOTE</a></p>
-<h2 id="u57FA_u672C_u914D_u7F6E_u547D_u4EE4"><a href="#u57FA_u672C_u914D_u7F6E_u547D_u4EE4" class="headerlink" title="基本配置命令"></a>基本配置命令</h2><h3 id="Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868"><a href="#Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868" class="headerlink" title="Git常用命令速查表"></a>Git常用命令速查表</h3><p><img src="http://i.imgur.com/dHE4dkR.jpg" alt=""><br><a id="more"></a></p>
-<h3 id="u4F7F_u7528Git_u751F_u6210ssh_u5BC6_u94A5"><a href="#u4F7F_u7528Git_u751F_u6210ssh_u5BC6_u94A5" class="headerlink" title="使用Git生成ssh密钥"></a>使用Git生成ssh密钥</h3><pre><code>ssh-keygen -t rsa -C &quot;email@example.com&quot;
-</code></pre><h3 id="u8BBE_u7F6E_u5168_u5C40_u7528_u6237_u540D_u548C_u90AE_u7BB1"><a href="#u8BBE_u7F6E_u5168_u5C40_u7528_u6237_u540D_u548C_u90AE_u7BB1" class="headerlink" title="设置全局用户名和邮箱"></a>设置全局用户名和邮箱</h3><pre><code>git config --global user.name &quot;YourName&quot;
-git config --global user.email &quot;email@example.com&quot;
-</code></pre><h3 id="u521D_u59CB_u5316_u4ED3_u5E93"><a href="#u521D_u59CB_u5316_u4ED3_u5E93" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><pre><code>git init
-</code></pre><h3 id="u6DFB_u52A0_u6587_u4EF6_u5230_u6682_u5B58_u533A"><a href="#u6DFB_u52A0_u6587_u4EF6_u5230_u6682_u5B58_u533A" class="headerlink" title="添加文件到暂存区"></a>添加文件到暂存区</h3><pre><code>git add &lt;filename&gt;    #添加指定文件到暂存区
-git add .    #添加工作区所有文件到暂存区
-git add -i    #交互方式添加文件到暂存区
-git add -u    #将工作区中已经变动的文件添加到暂存区，当新增加的文件不会被添加
-</code></pre><h3 id="u63D0_u4EA4_u6587_u4EF6_u5230_u4ED3_u5E93"><a href="#u63D0_u4EA4_u6587_u4EF6_u5230_u4ED3_u5E93" class="headerlink" title="提交文件到仓库"></a>提交文件到仓库</h3><pre><code>git commit -m &quot;描述信息&quot;        #提交更新
-git commit -am &quot;描述信息&quot;    #如果工作目录中仅是已跟踪的文件被修改或被删除，使用此提交命令
-</code></pre><h3 id="u5206_u652F_u7684_u521B_u5EFA_u3001_u5220_u9664_u3001_u548C_u5E73_u3001_u5207_u6362_u3001_u67E5_u770B"><a href="#u5206_u652F_u7684_u521B_u5EFA_u3001_u5220_u9664_u3001_u548C_u5E73_u3001_u5207_u6362_u3001_u67E5_u770B" class="headerlink" title="分支的创建、删除、和平、切换、查看"></a>分支的创建、删除、和平、切换、查看</h3><pre><code>git branch    #查看Git仓库中已有的分支
-git branch 新分支名 [分支起点]    #创建分支，如果没有分支起点的话，则默认在当前分支的最新提交上创建分支
-git checkout 分支名    #切换分支
-git checkout -b 新分支名        #创建同时切换到新分支
-git merge 要被合并的分支名    #合并分支
-git branch -d 要删除的分支名    #删除指定分支（如果分支没有被合并过，该命令会执行失败）
-git branch -D 要删除的分支名    #删除指定分支，不管有没有被合并过
-gitk                #用图形界面查看分支提交历史
-</code></pre><p>合并分支过程中如果发生冲突则需要自己手动解决冲突，然后再提交。有冲突时，Git会显示哪个文件有冲突，并在冲突的文件中加上特殊的标识符号，解决完冲突后，要手动去掉这些被添加的标识符号。如果冲突比较复杂的话，最好使用其他工具来协助，通过git mergetool来启动。冲突一般是在不同的分支上对同一文件的同一位置内容进行了改动，并已提交到仓库中，这样在合并的时候就会发生冲突。</p>
-<h3 id="u6807_u7B7E_u7684_u6DFB_u52A0_u3001_u5220_u9664_u3001_u67E5_u770B"><a href="#u6807_u7B7E_u7684_u6DFB_u52A0_u3001_u5220_u9664_u3001_u67E5_u770B" class="headerlink" title="标签的添加、删除、查看"></a>标签的添加、删除、查看</h3><pre><code>git tag        #查看标签
-git tag 标签名    #创建简单的标签
-git tag -a 标签名 -m &apos;附加信息&apos;    #创建附加信息的标签
-git show 标签名    #通过标签查看信息
-git tag -d 标签名    #删除标签
-</code></pre><p>标签可以在需要的地方，为某个提交对象创建别名，这样以后我们就可以通过标签来查看一些信息，创建分支等。</p>
-<h3 id="u67E5_u770B_u5DE5_u4F5C_u76EE_u5F55_u72B6_u6001"><a href="#u67E5_u770B_u5DE5_u4F5C_u76EE_u5F55_u72B6_u6001" class="headerlink" title="查看工作目录状态"></a>查看工作目录状态</h3><pre><code>git status
-</code></pre><p>在git命令执行后，要养成通过git status查看git状态的习惯，以便及时了解文件变化的情况。通过git status可以知道文件的状态（已修改未暂存、已删除、已修改并已暂存等待提交、未跟踪）。</p>
-<h3 id="u67E5_u770B_u63D0_u4EA4_u5386_u53F2"><a href="#u67E5_u770B_u63D0_u4EA4_u5386_u53F2" class="headerlink" title="查看提交历史"></a>查看提交历史</h3><pre><code>git log
-git log -p    #显示每次提交文件变化
-</code></pre><p>通过git log可以查看当前分支的所有提交历史，知道每次提交的commit对象的ID以及提交时附加的描述信息等。要显示更多的信息，需要使用其支持的选项，如git log -p可以将每次提交的文件变化也显示出来。</p>
-<h3 id="u67E5_u770B_u6307_u5B9A_u7684_u63D0_u4EA4_u5BF9_u8C61"><a href="#u67E5_u770B_u6307_u5B9A_u7684_u63D0_u4EA4_u5BF9_u8C61" class="headerlink" title="查看指定的提交对象"></a>查看指定的提交对象</h3><pre><code>git show commit_id    #查看指定的某次提交内容
-git show --all        #显示所有的提交历史内容
-git shortlog -s -n    #显示总的提交次数
-</code></pre><p>通过<code>git log</code>可以显示整个提交历史，而通过<code>git show commit-id</code>则可以查看指定的某次提交内容，当然<code>git show -all</code>也可以显示出提交历史，另外还可以格式化显示内容。</p>
+        <h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
 <blockquote>
-<p>Note : commit-id可以是commit对象对应的ID，也可以是HEAD，分支名，tag等。</p>
+<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。</p>
 </blockquote>
-<h3 id="u67E5_u770B_u5DE5_u4F5C_u533A_u3001_u6682_u5B58_u533A_u3001_u4ED3_u5E93_u4E4B_u95F4_u7684_u5DEE_u5F02"><a href="#u67E5_u770B_u5DE5_u4F5C_u533A_u3001_u6682_u5B58_u533A_u3001_u4ED3_u5E93_u4E4B_u95F4_u7684_u5DEE_u5F02" class="headerlink" title="查看工作区、暂存区、仓库之间的差异"></a>查看工作区、暂存区、仓库之间的差异</h3><pre><code>git diff        #比较工作区与暂存区的差异
-git diff HEAD        #比较工作区与仓库中最近一次的提交间的差异
-git diff --cached    #比较暂存区与仓库中最近一次提交的差异
-git blame filename    #可以列出该文件每次被修改的时间和内容
-</code></pre><h3 id="u7248_u672C_u56DE_u9000_u3001_u64A4_u9500_u64CD_u4F5C"><a href="#u7248_u672C_u56DE_u9000_u3001_u64A4_u9500_u64CD_u4F5C" class="headerlink" title="版本回退、撤销操作"></a>版本回退、撤销操作</h3><pre><code>git reflog    #显示提交历史的简介
-git checkout -- filename    #丢弃工作区的修改
-git reset --hard HEAD^        #回退到上一个版本
-git reset --hard commit_id    #回退到指定版本
-git checkout -- filename    #恢复工作区被删除的指定文件（文件之前被提交到仓库中）
-git checkout -f         #恢复工作区中所有被删除的文件(文件之前被提交到仓库中)
-git ls-files -d            #列出工作区被删除的文件（文件之前被提交到仓库中）
+<h2 id="urlopen_28_29"><a href="#urlopen_28_29" class="headerlink" title="urlopen()"></a>urlopen()</h2><h3 id="u57FA_u672C_u4ECB_u7ECD"><a href="#u57FA_u672C_u4ECB_u7ECD" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urlopen()打开一个给定的URL字符串与Web连接，并返回文件类的对象，是最简单的请求方式。</p>
+<pre><code>urlopen(url[,data[,timeout]])
 </code></pre><blockquote>
-<p>有时候，由于我们的误操作，产生了一些错误，我们发现后希望能够及时纠正这些因为误操作而产生的结果，将工作目录恢复到某个正常状态。</p>
+<p>其中url可以是url字符串，也可以是urllib2.Request类的实例。</p>
+<p>data是经过编码的POST数据(一般使用urllib.urlencode()进行编码)。</p>
+<p>timeout是可选的超时设置(单位：秒)，只对HTTP、HTTPS、FTP、FTPS有效。通过urlopen()函数是设置超时时间的最简单的方式，还可以通过socket模块或urllib2模块设置</p>
 </blockquote>
-<p>撤销修改，但还没有添加到暂存区： <code>git checkout -- filename</code> 修改的文件会被恢复到上次提交时的状态，修改的内容会丢失。<br>版本回退：先通过<code>git reflog</code>找到某个版本的<code>commit_id</code>，然后用<code>git reset --hard commit_id</code>将工作目录的文件恢复到指定的版本。<br>恢复工作区中被删除的文件（文件之前被提交到仓库中）：<code>git checkout -- filename</code> 或 <code>git checkout -f</code></p>
-<h3 id="u5907_u4EFD_u5DE5_u4F5C_u533A"><a href="#u5907_u4EFD_u5DE5_u4F5C_u533A" class="headerlink" title="备份工作区"></a>备份工作区</h3><pre><code>git stash            #将工作区文件保存在Git内部栈中
-git stash list            #列出Git内部栈中保存的工作区文件列表
-git stash apply stash_id    #恢复工作区到指定的内部栈状态
-git stash pop            #恢复工作区到上一个内部栈状态
-git stash clear            #清空Git内部栈
-</code></pre><p>如果正在一个<code>develop</code>分支上正在开发新功能，但这时<code>master</code>分支(稳定版本)突然发现了bug，并需要及时修复，而<code>develop</code>分支此时的工作还没有完成，且不希望将之前的工作就这样提交到仓库中时，这时就可以用<code>git stash</code>来暂时保存这些状态到Git内部栈中，并用当前分支上一次的提交内容来恢复工作目录，然后切换到<code>master</code>分支进行bug修复工作，等修复完毕并提交到仓库上后，再使用<code>git stash apply [stash@{0}]</code>或者<code>git stash pop</code>将工作目录恢复到之前的状态，继续之前的工作。</p>
-<p>同时也可以多次使用<code>git stash</code>将未提交的代码压入到Git栈中，但当多次使用<code>git stash</code>命令后，Git栈里将充满了未提交的代码，这时候到底要用哪个版本来恢复工作目录呢？<code>git stash list</code>命令可以将当前的Git栈信息打印出来，我们只需要将找到对应的版本号，例如使用<code>git stash apply stash@{1}</code>就可以用版本号为<code>stash@{1}</code>的内容来恢复工作目录。</p>
-<p>当Git栈中所有的内容都被恢复后，可以使用<code>git stash clear</code>来将栈清空。</p>
-<h3 id="u5C06_u5F53_u524D_u5DE5_u4F5C_u533A_u76EE_u5F55_u6587_u4EF6_u538B_u7F29_u5F52_u6863"><a href="#u5C06_u5F53_u524D_u5DE5_u4F5C_u533A_u76EE_u5F55_u6587_u4EF6_u538B_u7F29_u5F52_u6863" class="headerlink" title="将当前工作区目录文件压缩归档"></a>将当前工作区目录文件压缩归档</h3><pre><code>git archive --format=zip -o arch.zip HEAD
-git arch --format zip head&gt;arch.zip
-</code></pre><h2 id="u8FDC_u7A0B_u64CD_u4F5C"><a href="#u8FDC_u7A0B_u64CD_u4F5C" class="headerlink" title="远程操作"></a>远程操作</h2><p>Git相比其他版本控制软件的一个优点就是大多数的操作都可以在本地进行，而不用管远程的仓库，因为操作是在本地，且操作的数据也是在本地，加上指针等原因，所以执行的速度就会比较快。 在多人协作的项目中，就需要涉及与远程仓库交互的问题，主要是如何从远程仓库抓取最新数据合并到自己的本地分支上，将自己的最新成果分享给其他人或让别人审查等 。</p>
-<h3 id="u8FDC_u7A0B_u4ED3_u5E93_u7684_u514B_u9686_u3001_u6DFB_u52A0_u3001_u67E5_u770B"><a href="#u8FDC_u7A0B_u4ED3_u5E93_u7684_u514B_u9686_u3001_u6DFB_u52A0_u3001_u67E5_u770B" class="headerlink" title="远程仓库的克隆、添加、查看"></a>远程仓库的克隆、添加、查看</h3><pre><code>git remote    #显示已添加的远程仓库名
-git remote -v     #显示已添加的远程仓库名和地址
-git remote add 远程仓库名 远程仓库地址    #在本地添加远程仓库
-git remote rm 远程仓库名            #删除本地添加的远程仓库名
-git remote rename 原名 新名        #重命名远程仓库名
-git clone 远程仓库地址 [克隆到指定的文件夹]    #克隆远程仓库到本地
-git fetch 远程仓库名        #从远程仓库抓取最新数据到本地但不与本地分支进行合并 
-git pull 远程仓库名    本地要合并的分支名    #从远程仓库抓取最新数据并自动与本地分支进行合并
-git push 远程仓库名 本地分支名    #将本地仓库推送到远程仓库中
-git remote show 远程仓库名    #查看远程仓库信息
-git remote show            #查看所有远程仓库
-git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默认不推送标签）
-</code></pre><h3 id="u534F_u540C_u6D41_u7A0B"><a href="#u534F_u540C_u6D41_u7A0B" class="headerlink" title="协同流程"></a>协同流程</h3><p>Fork远程项目</p>
-<p>把Fork的项目clone到本地</p>
-<p>执行以下命令，将别人的库添加为远端库</p>
-<pre><code>git remote add 远端仓库名 远端的分支
-</code></pre><p>运行以下命令，拉去合并到本地</p>
-<pre><code>git pull 远端仓库名 远端分支名
-</code></pre><p>编辑内容</p>
-<p><code>commit</code>之后<code>push</code>到自己的库</p>
-<p>登录Github，在你的首页可以看到一个<code>pull request</code>按钮，点击它，填写一些说明信息，提交即可。</p>
-<p>在本地编辑内容前必须执行<code>pull</code>操作同步别人的远端库（这样避免冲突）</p>
-<h3 id="u5B9E_u7528_u6280_u5DE7"><a href="#u5B9E_u7528_u6280_u5DE7" class="headerlink" title="实用技巧"></a>实用技巧</h3><p>当手头工作没有完成时，先把工作现场<code>git stash</code>一下，然后去修复bug，修复后，再使用<code>git stash pop</code>，回到工作现场.</p>
-<h3 id="u591A_u4EBA_u534F_u4F5C_u6280_u5DE7"><a href="#u591A_u4EBA_u534F_u4F5C_u6280_u5DE7" class="headerlink" title="多人协作技巧"></a>多人协作技巧</h3><p>查看远程库信息，使用<code>git remote -v</code>；</p>
-<p>本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
-<p>从本地推送分支，使用<code>git push</code> 远程仓库名 分支名，如果推送失败，先用<code>git pull</code>抓取远程的新提交；</p>
-<p>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致；</p>
-<p>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；</p>
-<p>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。</p>
-<h3 id="Git_u5E38_u7528_u547D_u4EE4_u601D_u7EF4_u5BFC_u56FE"><a href="#Git_u5E38_u7528_u547D_u4EE4_u601D_u7EF4_u5BFC_u56FE" class="headerlink" title="Git常用命令思维导图"></a>Git常用命令思维导图</h3><p><img src="http://i.imgur.com/Jbr9CJ6.jpg" alt=""></p>
+<p>urlopen()一旦连接成功，将会返回一个文件类型对象，就像在目标路径打开了一个可读文件。假设文件对象是f，则其将支持可读方法，如f.read()、f.readline()、f.readlines()、f.close()、f.fileno()。</p>
+<pre><code>f.read([nbytes])     以字符串形式读取全部或nbytes个字节的数据
+f.readline()         以字符串形式读取单行数据
+f.readlines()        读取所有行并返回列表
+f.fileno()           返回文件句柄(整数描述符)
+f.close()            关闭URL连接
+f.info()             返回映射对象，带有与URL关联的元信息。对HTTP来讲，返回的服务器响应包含HTTP报头。对于FTP来说，返回的报头包含&apos;content-length&apos;，对于本地文件来说，返回的报头包含&apos;content-length&apos;和&apos;content-type&apos;字段
+f.getcode()          返回整型HTTP响应代码，例如，成功时返回200，未找到文件返回404
+f.geturl()           返回所返回数据的真实URL
+</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A" class="headerlink" title="几处实例解析："></a>几处实例解析：</h3><pre><code>import urllib2
 
+response = urllib2.urlopen(&apos;http://www.douban.com&apos;)
+html = response.read()
+</code></pre><p>其中<code>response = urllib2.urlopen(&#39;http://www.douban.com&#39;)</code>实际上也可以看作：</p>
+<pre><code>request = urllib2.Request(&quot;http://www.douban.com&quot;)
+response = urllib2.urlopen(request)
+</code></pre><p>POST:</p>
+<pre><code>import urllib
+import urllib2
+
+url = &apos;http://www.douban.com&apos;
+info = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
+data = urllib.urlencode(info)
+request = urllib2.Request(url, data)
+response = urllib2.urlopen(request)
+page = response.read()
+</code></pre><p>伪装浏览器：</p>
+<pre><code>import urllib
+import urllib2
+
+url = &apos;http://www.douban.com&apos;
+user_agent = &apos;Mozilla/5.0 (Windows NT 6.1; WOW64)&apos;
+values = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
+header = {&apos;User-Agent&apos;:user_agent}
+
+data = urllib.urlencode(values)
+request = urllib2.Request(url, data, header)
+response = urllib2.urlopen(request)
+page = response.read()
+</code></pre><h2 id="u81EA_u5B9A_u4E49Opener"><a href="#u81EA_u5B9A_u4E49Opener" class="headerlink" title="自定义Opener"></a>自定义Opener</h2><h3 id="u57FA_u672C_u4ECB_u7ECD-1"><a href="#u57FA_u672C_u4ECB_u7ECD-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urllib2模块最强大的部分莫过于其的Opener，基本的urlopen()函数不支持验证、Cookie或其它HTTP高级功能。而通过build_opener()函数建立自定义Opener对象则可以支持这些功能。</p>
+<pre><code>build_opener([handler1 [, handler2, ……]])
+</code></pre><p>要打开URL，可构建自定义opener对象。参数handler1、handler2……都是特殊处理程序对象的实例。这些处理程序的目的是向得到的opener对象添加各种功能。可用的处理程序对象如下所示：</p>
+<pre><code>CacheFTPHandler         具有持久FTP连接的FTP处理程序
+FileHandler             打开本地文件
+FTPHandler              通过FTP打开URL
+HTTPBasicAuthHandler    基本的HTTP验证处理
+HTTPCookieProcessor     处理HTTP Cookie
+HTTPDefaultErrorHandler 通过引发HTTPError异常来处理HTTP错误
+HTTPDigestAuthHandler   HTTP摘要验证处理
+HTTPHandler             通过HTTP打开URL
+HTTPRedirectHandler     处理HTTP重定向
+HTTPSHandler            通过安全HTTP打开URL
+ProxyHandler            通过代理重定向请求
+ProxyBasicAuthHandler   基本的代理验证
+ProxyDigestAuthHandler  摘要代理验证
+UnknownHandler          处理所有未知URL的处理程序
+</code></pre><blockquote>
+<p>build_opener()返回的对象具有open(url[, data[, timeout]])方法，作用是根据各种处理程序提供的规则打开URL。</p>
+</blockquote>
+<pre><code>install_opener(opener)
+</code></pre><p>安装opener作为urlopen()使用的全局URL opener，即意味着以后调用urlopen()时都会使用安装的opener对象。opener通常是build_opener()创建的opener对象。</p>
+<h3 id="u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="几种相对复杂情况的解决方法"></a>几种相对复杂情况的解决方法</h3><h4 id="cookie_u5904_u7406_uFF1A"><a href="#cookie_u5904_u7406_uFF1A" class="headerlink" title="cookie处理："></a>cookie处理：</h4><p>如果要管理HTTP cookie，需要创建添加了HTTPCookieProcessor处理程序的opener对象。默认情况下，HTTPCookieProcessor使用CookieJar对象，将不同类型的CookieJar对象作为HTTPCookieProcessor的参数提供，可支持不同的cookie处理。</p>
+<pre><code>cookie = cookielib.MozillaCookieJar()
+cookiehand = HTTPCookieProcessor(cookie)
+opener = urllib2.build_opener(cookiehand)
+u = opener.open(url)
+</code></pre><h4 id="u5BC6_u7801_u9A8C_u8BC1"><a href="#u5BC6_u7801_u9A8C_u8BC1" class="headerlink" title="密码验证"></a>密码验证</h4><pre><code>import urllib2
+
+auth = urllib2.HTTPBasicAuthHandler()
+auth.add_password(realm, url, username, passwd) #realm是与验证相关联的名称或描述信息(如:Administrator)，取决于服务器。
+opener = urllib2.build_opener(auth)
+u = opener.open(URL)
+</code></pre><h4 id="u4EE3_u7406"><a href="#u4EE3_u7406" class="headerlink" title="代理"></a>代理</h4><p>urllib2会自动检测代理设置，默认使用环境变量http_proxy来设置HTTP Proxy。通常情况下是有帮助的，但是某些情况下也可能会造成一些麻烦（因为通过代理获取本地URL资源时会被阻止，因此如果正在通过代理访问internet，则使用脚本测试本地服务器时必须阻止urllib2模块使用代理）。因此，如果想在程序中明确Proxy的使用而不受环境变量的影响，可以创建ProxyHandler实例，并将实例作为build_opener()的参数来实现。</p>
+<pre><code>import urllib2
+
+enable_proxy = True
+proxy_handler = urllib2.ProxyHandler({&apos;http&apos;:&apos;http://some-proxy.com:8080&apos;})
+null_proxy_handler = urllib2.ProxyHandler({})
+
+if enable_proxy:
+    opener = urllib2.build_opener(proxy_handler)
+else:
+    opener = urllib2.build_opener(null_proxy_handler)
+
+urllib2.install_opener(opener)
+</code></pre><h1 id="cookielib_u6A21_u5757"><a href="#cookielib_u6A21_u5757" class="headerlink" title="cookielib模块"></a>cookielib模块</h1><p>cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问internet资源。例如可以利用本模块的CookieJar类的对象来捕获cookie并在后续连接请求是重新改送。cookielib模块用到的对象主要有以下几个：CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJar。关系如下：</p>
+<p><img src="http://i.imgur.com/mHU9T66.png" alt=""></p>
+<h2 id="CookieJar_28_29"><a href="#CookieJar_28_29" class="headerlink" title="CookieJar()"></a>CookieJar()</h2><p>管理HTTP cookie值、存储HTTP请求生成的cookie、向传出的HTTP请求添加cookie的对象。整个cookie都存储在内存中，对CookieJar实例进行垃圾回收后cookie也将丢失。</p>
+<h2 id="FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="FileCookieJar(filename, delayload = None, policy = None)"></a>FileCookieJar(filename, delayload = None, policy = None)</h2><p>创建FileCookieJar实例，检索cookie信息并将cookie存储到文件中。filename是存储cookie的文件名。delayload为True时支持延迟访问文件，即只有在需要时才读文件或在文件中存储数据。</p>
+<h2 id="MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="MozillaCookieJar(filename, delayload = None, policy = None)"></a>MozillaCookieJar(filename, delayload = None, policy = None)</h2><p>创建与Mozilla浏览器cookies.txt兼容的FileCookieJar实例。</p>
+<h2 id="LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="LWPCookieJar(filename, delayload = None, policy = None)"></a>LWPCookieJar(filename, delayload = None, policy = None)</h2><p>创建与libwww-per的Set-Cookie3文件格式兼容的FileCookieJar实例。</p>
+<h1 id="u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><a href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B" class="headerlink" title="模拟登录实例"></a>模拟登录实例</h1><pre><code>#! /usr/bin/env python
+#coding=utf-8
+import urllib2
+import urllib
+import cookielib
+
+data = {&quot;email&quot;: &quot;username&quot;, &quot;password&quot;: &quot;passwd&quot;}  #登陆用户名和密码
+post_data = urllib.urlencode(data)
+cookie = cookielib.CookieJar()
+opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
+headers = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
+request = urllib2.Request(&quot;http://www.renren.com/PLogin.do&quot;,post_data,headers)
+content = opener.open(req)
+print content.read().decode(&quot;utf-8&quot;).encode(&quot;gbk&quot;)
+</code></pre>
       
     </div>
 
@@ -443,7 +466,13 @@ git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默�
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/cookielib/" rel="tag">#cookielib</a>
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/urllib2/" rel="tag">#urllib2</a>
+          
+            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
           
         </div>
       
@@ -452,17 +481,13 @@ git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/22/TLS协议握手过程/" rel="next" title="TLS协议握手过程">
-                <i class="fa fa-chevron-left"></i> TLS协议握手过程
+              <a href="/2016/01/23/Git常用命令/" rel="next" title="Git常用命令">
+                <i class="fa fa-chevron-left"></i> Git常用命令
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" rel="prev" title="urllib2模块、cookielib模块及模拟登录">
-                urllib2模块、cookielib模块及模拟登录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,10 +502,10 @@ git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/23/Git常用命令/"
-     data-title="Git常用命令"
+        <div class="ds-share flat" data-thread-key="2016/01/24/urllib2模块、cookielib模块及模拟登录/"
+     data-title="urllib2模块、cookielib模块及模拟登录"
      data-content=""
-     data-url="http://HITCaiDog.me/2016/01/23/Git常用命令/">
+     data-url="http://HITCaiDog.me/2016/01/24/urllib2模块、cookielib模块及模拟登录/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -510,8 +535,8 @@ git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/23/Git常用命令/"
-           data-title="Git常用命令" data-url="http://HITCaiDog.me/2016/01/23/Git常用命令/">
+      <div class="ds-thread" data-thread-key="2016/01/24/urllib2模块、cookielib模块及模拟登录/"
+           data-title="urllib2模块、cookielib模块及模拟登录" data-url="http://HITCaiDog.me/2016/01/24/urllib2模块、cookielib模块及模拟登录/">
       </div>
     
   </div>
@@ -652,7 +677,7 @@ git push 远程仓库名 标签名    #将标签推送到远程仓库（Git默�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u57FA_u672C_u914D_u7F6E_u547D_u4EE4"><span class="nav-number">1.</span> <span class="nav-text">基本配置命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868"><span class="nav-number">1.1.</span> <span class="nav-text">Git常用命令速查表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4F7F_u7528Git_u751F_u6210ssh_u5BC6_u94A5"><span class="nav-number">1.2.</span> <span class="nav-text">使用Git生成ssh密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u7F6E_u5168_u5C40_u7528_u6237_u540D_u548C_u90AE_u7BB1"><span class="nav-number">1.3.</span> <span class="nav-text">设置全局用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521D_u59CB_u5316_u4ED3_u5E93"><span class="nav-number">1.4.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6DFB_u52A0_u6587_u4EF6_u5230_u6682_u5B58_u533A"><span class="nav-number">1.5.</span> <span class="nav-text">添加文件到暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u63D0_u4EA4_u6587_u4EF6_u5230_u4ED3_u5E93"><span class="nav-number">1.6.</span> <span class="nav-text">提交文件到仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5206_u652F_u7684_u521B_u5EFA_u3001_u5220_u9664_u3001_u548C_u5E73_u3001_u5207_u6362_u3001_u67E5_u770B"><span class="nav-number">1.7.</span> <span class="nav-text">分支的创建、删除、和平、切换、查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6807_u7B7E_u7684_u6DFB_u52A0_u3001_u5220_u9664_u3001_u67E5_u770B"><span class="nav-number">1.8.</span> <span class="nav-text">标签的添加、删除、查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u5DE5_u4F5C_u76EE_u5F55_u72B6_u6001"><span class="nav-number">1.9.</span> <span class="nav-text">查看工作目录状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u63D0_u4EA4_u5386_u53F2"><span class="nav-number">1.10.</span> <span class="nav-text">查看提交历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u6307_u5B9A_u7684_u63D0_u4EA4_u5BF9_u8C61"><span class="nav-number">1.11.</span> <span class="nav-text">查看指定的提交对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u67E5_u770B_u5DE5_u4F5C_u533A_u3001_u6682_u5B58_u533A_u3001_u4ED3_u5E93_u4E4B_u95F4_u7684_u5DEE_u5F02"><span class="nav-number">1.12.</span> <span class="nav-text">查看工作区、暂存区、仓库之间的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7248_u672C_u56DE_u9000_u3001_u64A4_u9500_u64CD_u4F5C"><span class="nav-number">1.13.</span> <span class="nav-text">版本回退、撤销操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5907_u4EFD_u5DE5_u4F5C_u533A"><span class="nav-number">1.14.</span> <span class="nav-text">备份工作区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C06_u5F53_u524D_u5DE5_u4F5C_u533A_u76EE_u5F55_u6587_u4EF6_u538B_u7F29_u5F52_u6863"><span class="nav-number">1.15.</span> <span class="nav-text">将当前工作区目录文件压缩归档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u8FDC_u7A0B_u64CD_u4F5C"><span class="nav-number">2.</span> <span class="nav-text">远程操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FDC_u7A0B_u4ED3_u5E93_u7684_u514B_u9686_u3001_u6DFB_u52A0_u3001_u67E5_u770B"><span class="nav-number">2.1.</span> <span class="nav-text">远程仓库的克隆、添加、查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u534F_u540C_u6D41_u7A0B"><span class="nav-number">2.2.</span> <span class="nav-text">协同流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B9E_u7528_u6280_u5DE7"><span class="nav-number">2.3.</span> <span class="nav-text">实用技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u591A_u4EBA_u534F_u4F5C_u6280_u5DE7"><span class="nav-number">2.4.</span> <span class="nav-text">多人协作技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git_u5E38_u7528_u547D_u4EE4_u601D_u7EF4_u5BFC_u56FE"><span class="nav-number">2.5.</span> <span class="nav-text">Git常用命令思维导图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib2_u6A21_u5757"><span class="nav-number">1.</span> <span class="nav-text">urllib2模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#urlopen_28_29"><span class="nav-number">1.1.</span> <span class="nav-text">urlopen()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790_uFF1A"><span class="nav-number">1.1.2.</span> <span class="nav-text">几处实例解析：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u81EA_u5B9A_u4E49Opener"><span class="nav-number">1.2.</span> <span class="nav-text">自定义Opener</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u57FA_u672C_u4ECB_u7ECD-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><span class="nav-number">1.2.2.</span> <span class="nav-text">几种相对复杂情况的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie_u5904_u7406_uFF1A"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">cookie处理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5BC6_u7801_u9A8C_u8BC1"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">密码验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4EE3_u7406"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">代理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cookielib_u6A21_u5757"><span class="nav-number">2.</span> <span class="nav-text">cookielib模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CookieJar_28_29"><span class="nav-number">2.1.</span> <span class="nav-text">CookieJar()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.2.</span> <span class="nav-text">FileCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.3.</span> <span class="nav-text">MozillaCookieJar(filename, delayload = None, policy = None)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><span class="nav-number">2.4.</span> <span class="nav-text">LWPCookieJar(filename, delayload = None, policy = None)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><span class="nav-number">3.</span> <span class="nav-text">模拟登录实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
