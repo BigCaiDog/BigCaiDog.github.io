@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-24T16:18:32.242Z</updated>
+  <updated>2016-01-26T11:19:08.289Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -13,6 +13,280 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Beautiful Soup]]></title>
+    <link href="http://HITCaiDog.me/2016/01/25/Beautiful-Soup/"/>
+    <id>http://HITCaiDog.me/2016/01/25/Beautiful-Soup/</id>
+    <published>2016-01-25T03:06:14.000Z</published>
+    <updated>2016-01-26T11:19:08.289Z</updated>
+    <content type="html"><![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。</p>
+<h2 id="Beautiful_Soup_u7B80_u4ECB"><a href="#Beautiful_Soup_u7B80_u4ECB" class="headerlink" title="Beautiful Soup简介"></a>Beautiful Soup简介</h2><p>Beautiful Soup其实就是python的一个库，最主要的功能是从网页抓取数据。官方解释如下：</p>
+<blockquote>
+<p>Beautiful Soup提供一些简单的、python式的函数用于处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。<br>Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。你不需要考虑编码方式，除非文档没有指定一个编码方式。这时，Beautiful Soup就不能自动识别编码方式了，需要说明一下原始编码方式。<br>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略和强劲的速度。</p>
+</blockquote>
+<h2 id="Beautiful_Soup_u5B89_u88C5"><a href="#Beautiful_Soup_u5B89_u88C5" class="headerlink" title="Beautiful Soup安装"></a>Beautiful Soup安装</h2><p>下载<a href="https://pypi.python.org/pypi/beautifulsoup4/4.4.1" target="_blank" rel="external">安装文件</a>，下载完成后解压，运行下面命令即可完成安装：</p>
+<pre><code>python setup.py build
+python setup.py install
+</code></pre><p>运行python插入操作，如下图所示，说明安装成功：</p>
+<p><img src="http://i.imgur.com/7nNQxO5.png" alt=""></p>
+<blockquote>
+<p>Beautiful Soup 4 已经移植到bs4了，所以导入时需要使用<code>import bs4</code></p>
+</blockquote>
+<p>安装lxml</p>
+<p>Beautiful Soup支持Python标准库中的HTML解析器，还支持一些第三方解析器，如果不安装则会直接使用Python默认的解析器。官方推荐使用lxml，速度快，功能强大。</p>
+<p>下载<a href="https://pypi.python.org/pypi/lxml/3.5.0" target="_blank" rel="external">安装文件</a>安装即可。</p>
+<p>解析器使用方法：</p>
+<pre><code>BeautifulSoup(markup, &quot;lxml&quot;)
+</code></pre><h2 id="u521B_u5EFABeautiful_Soup_u5BF9_u8C61"><a href="#u521B_u5EFABeautiful_Soup_u5BF9_u8C61" class="headerlink" title="创建Beautiful Soup对象"></a>创建Beautiful Soup对象</h2><pre><code>from bs4 import BeautifulSoup
+
+#创建一个示例字符串
+html = &quot;&quot;&quot;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were
+&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;,
+&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and
+&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;
+and they lived at the bottom of a well.&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;
+&quot;&quot;&quot;
+soup = BeautifulSoup(html) #创建Beautiful Soup对象，也可以利用本地HTML文件创建BeautifulSoup(open(&apos;index.html&apos;))
+print soup.prettify() #格式化输出
+</code></pre><p>输出：</p>
+<pre><code>&lt;html&gt;
+ &lt;head&gt;
+  &lt;title&gt;
+   The Dormouse&apos;s story
+  &lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;
+   &lt;b&gt;
+    The Dormouse&apos;s story
+   &lt;/b&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;story&quot;&gt;
+   Once upon a time there were three little sisters; and their names were
+   &lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;
+    &lt;!-- Elsie --&gt;
+   &lt;/a&gt;
+   ,
+   &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;
+    Lacie
+   &lt;/a&gt;
+   and
+   &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;
+    Tillie
+   &lt;/a&gt;
+   ;
+and they lived at the bottom of a well.
+  &lt;/p&gt;
+  &lt;p class=&quot;story&quot;&gt;
+   ...
+  &lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="u56DB_u5927_u5BF9_u8C61_u79CD_u7C7B"><a href="#u56DB_u5927_u5BF9_u8C61_u79CD_u7C7B" class="headerlink" title="四大对象种类"></a>四大对象种类</h2><p>Beautiful Soap将复杂HTML文档转换成一个复杂的树形结构，每个节点都是python对象，所有对象可以归纳为4类：</p>
+<pre><code>Tag
+NavigableString
+BeautifulSoup
+Comment
+</code></pre><h3 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h3><p>Tag通俗点讲就是HTML中的一个个标签，如：</p>
+<pre><code>&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;
+</code></pre><p>上面的title、a等等HTML标签加上里面包括的内容就是Tag。利用Beautiful Soap来获取Tags：</p>
+<pre><code>print soup.title
+
+输出：&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;
+
+print soup.head
+
+输出：&lt;head&gt;&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;&lt;/head&gt;
+
+print soup.a
+
+输出：&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;
+
+print soup.p
+输出：&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+</code></pre><p>如上，可以利用soup加标签名获取这些标签的内容，不过它查找的是在所有内容中第一个符合要求的标签。</p>
+<p>验证一下这些对象的类型：</p>
+<pre><code>print type(soup.a)
+
+输出：&lt;class &apos;bs4.element.Tag&apos;&gt;
+</code></pre><p>对于Tag，有两个重要的属性：name、attributes。</p>
+<p>name:</p>
+<pre><code>print soup.name
+print soup.head.name
+
+输出：[document]
+     head
+</code></pre><p>soup对象本身比较特殊，它的name即为[document]，对于其它内部标签，输出的值便为标签本身的名称。</p>
+<p>attributes:</p>
+<pre><code>print soup.p.attrs
+
+输出：{&apos;class&apos;:[&apos;title&apos;],&apos;name&apos;:&apos;dromouse&apos;}
+</code></pre><p>即输出了p标签的所有属性，得到一个属性字典。若想单独获取某个属性，可以使用如下命令：</p>
+<pre><code>print soup.p[&apos;class&apos;] #或soup.p.get(&apos;class&apos;)
+
+输出：[&apos;title&apos;]
+</code></pre><p>修改属性：</p>
+<pre><code>soup.p[&apos;class&apos;] = &apos;newClass&apos;
+print soup.p
+
+输出：&lt;p class=&quot;newClass&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+</code></pre><p>删除属性：</p>
+<pre><code>del soup.p[&apos;class&apos;]
+print soup.p
+
+&lt;p name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+</code></pre><h3 id="NavigableString"><a href="#NavigableString" class="headerlink" title="NavigableString"></a>NavigableString</h3><p>字符串常被包含在Tag内，Beautiful Soup用NavigableString来包装Tag中的字符串。</p>
+<pre><code>print soup.p.string
+print type(soup.p.string)
+
+输出：The Dormouse&apos;s story
+     &lt;class &apos;bs4.element.NavigableString&apos;&gt;
+</code></pre><h3 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h3><p>BeautifulSoup对象表示的是一个文档的全部内容。大多数时候可以把它当作一个特殊的Tag对象。</p>
+<pre><code>print type(soup.name)
+print soup.name
+print soup.attrs
+
+输出：&lt;type &apos;unicode&apos;&gt;
+     [document]
+     {}
+</code></pre><h3 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h3><p>Tag、NavigableString、BeautifulSoup几乎覆盖了html和xml中的所有内容，但是还有一些特殊对象。容易让人担心的内容是文档的注释部分。</p>
+<pre><code>markup = &quot;&lt;b&gt;&lt;!--something--&gt;&lt;/b&gt;&quot;
+soup = BeautifulSoup(markup)
+comment = soup.b.string
+print type(comment)
+
+输出：&lt;class &apos;bs4.element.Comment&apos;&gt;
+</code></pre><p>Comment对象是一个特殊类型的NavigableString对象:</p>
+<pre><code>print comment
+
+u&apos;something&apos;
+</code></pre><p>但是当它出现在HTML文档中时，Comment对象会使用特殊的格式输出：</p>
+<pre><code>print(soup.b.prettify())
+
+输出：&lt;b&gt;
+     &lt;!--something--&gt;
+     &lt;/b&gt;
+</code></pre><h2 id="u904D_u5386_u6587_u6863_u6811"><a href="#u904D_u5386_u6587_u6863_u6811" class="headerlink" title="遍历文档树"></a>遍历文档树</h2><h3 id="u76F4_u63A5_u5B50_u8282_u70B9"><a href="#u76F4_u63A5_u5B50_u8282_u70B9" class="headerlink" title="直接子节点"></a>直接子节点</h3><blockquote>
+<p>要点： .contents .children属性</p>
+</blockquote>
+<h4 id="contents"><a href="#contents" class="headerlink" title=".contents"></a>.contents</h4><p>tag的.content属性可以将tag的子节点以列表的方式输出。</p>
+<pre><code>print soup.head.contents
+
+输出：[&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]
+</code></pre><p>输出方式为列表，可以用列表索引获取其某一个元素</p>
+<pre><code>print soup.head.contents[0]
+
+输出：&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;
+</code></pre><h4 id="children"><a href="#children" class="headerlink" title=".children"></a>.children</h4><p>它返回的不是一个list，不过可以通过遍历获取所有子节点，通过打印.children发现它是一个list生成器对象。</p>
+<pre><code>print soup.head.children
+
+&lt;listiterator object at 0x7f71457f5710&gt;
+</code></pre><p>遍历一下即可获取内容：</p>
+<pre><code>for child in soup.body.children:
+    print child
+
+输出：&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;,
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;
+and they lived at the bottom of a well.&lt;/p&gt;
+
+
+&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;
+</code></pre><h3 id="u5B50_u5B59_u7ED3_u70B9"><a href="#u5B50_u5B59_u7ED3_u70B9" class="headerlink" title="子孙结点"></a>子孙结点</h3><blockquote>
+<p>要点： .descendants属性</p>
+</blockquote>
+<p>.descendants</p>
+<p>.contents和.children属性仅包含tag的直接节点，.descendants属性可以对所有tag的子孙节点进行递归循环，和.children类似，也需要遍历获取其中的内容。</p>
+<pre><code>for child in soup.descendants:
+    print child
+</code></pre><p>所有的节点都将被打印出来，首先最外层的HTML标签，其次从head标签一个个剥离，以此类推。</p>
+<h2 id="u641C_u7D22_u6587_u6863_u6811"><a href="#u641C_u7D22_u6587_u6863_u6811" class="headerlink" title="搜索文档树"></a>搜索文档树</h2><h3 id="find_all_28name_2C_attrs_2C_recursive_2C_text_2C_**kwargs_29"><a href="#find_all_28name_2C_attrs_2C_recursive_2C_text_2C_**kwargs_29" class="headerlink" title="find_all(name, attrs, recursive, text, **kwargs)"></a>find_all(name, attrs, recursive, text, **kwargs)</h3><p>find_all()方法搜索当前tag的所有tag子节点，并判断是否符合过滤器的条件。</p>
+<h4 id="name_u53C2_u6570"><a href="#name_u53C2_u6570" class="headerlink" title="name参数"></a>name参数</h4><p>name参数可以查找所有名字为name的tag，字符串对象会被自动忽略掉。</p>
+<h5 id="u4F20_u5B57_u7B26_u4E32"><a href="#u4F20_u5B57_u7B26_u4E32" class="headerlink" title="传字符串"></a>传字符串</h5><p>最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的<b>标签</b></p>
+<pre><code>soup.find_all(&apos;b&apos;)
+
+输出：[&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;]
+
+print soup.find_all(&apos;a&apos;)
+
+[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre><h4 id="u4F20_u6B63_u5219_u8868_u8FBE_u5F0F"><a href="#u4F20_u6B63_u5219_u8868_u8FBE_u5F0F" class="headerlink" title="传正则表达式"></a>传正则表达式</h4><p>如果传入正则表达式作为参数,Beautiful Soup会通过正则表达式的 match() 来匹配内容.下面例子中找出所有以b开头的标签,这表示<body>和<b>标签都应该被找到</b></body></p>
+<pre><code>import re
+
+for tag in soup.find_all(re.compile(&quot;^b&quot;)):
+    print tag.name
+
+输出：body
+     b
+</code></pre><h4 id="u4F20_u5217_u8868"><a href="#u4F20_u5217_u8868" class="headerlink" title="传列表"></a>传列表</h4><p>如果传入列表参数,Beautiful Soup会将与列表中任一元素匹配的内容返回.下面代码找到文档中所有<a>标签和<b>标签</b></a></p>
+<pre><code>soup.find_all([&quot;a&quot;, &quot;b&quot;])
+
+输出：[&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;,
+     &lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,
+     &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;,
+     &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre><h4 id="u4F20_u65B9_u6CD5"><a href="#u4F20_u65B9_u6CD5" class="headerlink" title="传方法"></a>传方法</h4><p>如果没有合适过滤器,那么还可以定义一个方法,方法只接受一个元素参数,如果这个方法返回 True 表示当前元素匹配并且被找到,如果不是则反回 False</p>
+<p>下面方法校验了当前元素,如果包含 class 属性却不包含 id 属性,那么将返回 True:</p>
+<pre><code>def has_class_but_no_id(tag):
+     return tag.has_attr(&apos;class&apos;) and not tag.has_attr(&apos;id&apos;)
+soup.find_all(has_class_but_no_id)
+</code></pre><blockquote>
+<p>引申：<code>soup.find_all(True)</code>将查到所有的tag，但是不会返回字符串节点</p>
+</blockquote>
+<h3 id="keyword_u53C2_u6570"><a href="#keyword_u53C2_u6570" class="headerlink" title="keyword参数"></a>keyword参数</h3><blockquote>
+<p>注意：如果一个指定名字的参数不是搜索内置的参数名,搜索时会把该参数当作指定名字tag的属性来搜索,如果包含一个名字为 id 的参数,Beautiful Soup会搜索每个tag的”id”属性</p>
+</blockquote>
+<pre><code>soup.find_all(id=&apos;link2&apos;)
+
+# [&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;]
+</code></pre><p>如果传入 href 参数,Beautiful Soup会搜索每个tag的”href”属性</p>
+<pre><code>soup.find_all(href=re.compile(&quot;elsie&quot;))
+
+# [&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]
+</code></pre><p>在这里我们想用 class 过滤，不过 class 是 python 的关键词，这怎么办？加个下划线就可以</p>
+<pre><code>soup.find_all(&quot;a&quot;, class_=&quot;sister&quot;)
+# [&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,
+#  &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;,
+#  &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre><p>通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag</p>
+<pre><code>data_soup.find_all(attrs={&quot;data-foo&quot;: &quot;value&quot;})
+# [&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;]
+</code></pre><h2 id="CSS_u9009_u62E9_u5668"><a href="#CSS_u9009_u62E9_u5668" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>写 CSS 时，标签名不加任何修饰，类名前加点，id名前加 #，在这里我们也可以利用类似的方法来筛选元素，用到的方法是 soup.select()，返回类型是 list</p>
+<h3 id="u901A_u8FC7_u6807_u7B7E_u540D"><a href="#u901A_u8FC7_u6807_u7B7E_u540D" class="headerlink" title="通过标签名"></a>通过标签名</h3><pre><code>print soup.select(&apos;title&apos;) 
+#[&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]
+</code></pre><h3 id="u901A_u8FC7_u7C7B_u540D"><a href="#u901A_u8FC7_u7C7B_u540D" class="headerlink" title="通过类名"></a>通过类名</h3><pre><code>print soup.select(&apos;.sister&apos;)
+#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre><h3 id="u7EC4_u5408_u67E5_u627E"><a href="#u7EC4_u5408_u67E5_u627E" class="headerlink" title="组合查找"></a>组合查找</h3><p>组合查找即和写 class 文件时，标签名与类名、id名进行的组合原理是一样的，例如查找 p 标签中，id 等于 link1的内容，二者需要用空格分开</p>
+<pre><code>print soup.select(&apos;p #link1&apos;)
+#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;]
+</code></pre><h3 id="u5C5E_u6027_u67E5_u627E"><a href="#u5C5E_u6027_u67E5_u627E" class="headerlink" title="属性查找"></a>属性查找</h3><p>查找时还可以加入属性元素，属性需要用中括号括起来，注意属性和标签属于同一节点，所以中间不能加空格，否则会无法匹配到。</p>
+<pre><code>print soup.select(&apos;a[class=&quot;sister&quot;]&apos;)
+#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre><p>内容太多了，要吐了简直，先整这些吧。</p>
+<p>大部分内容来自<a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">静觅 » Python爬虫入门八之Beautiful Soup的用法</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/X]]>
+    </summary>
+    
+      <category term="HTML/XML解析" scheme="http://HITCaiDog.me/tags/HTML-XML%E8%A7%A3%E6%9E%90/"/>
+    
+      <category term="python" scheme="http://HITCaiDog.me/tags/python/"/>
+    
+      <category term="爬虫" scheme="http://HITCaiDog.me/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="python" scheme="http://HITCaiDog.me/categories/python/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[urllib2模块、cookielib模块及模拟登录]]></title>

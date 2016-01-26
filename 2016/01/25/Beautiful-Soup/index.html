@@ -39,7 +39,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="HTML/XML解析,python,爬虫," />
 
 
 
@@ -57,15 +57,20 @@
 
 
 
-<meta name="description" content="有容乃大，无欲则刚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HITCaiDog's Blog">
-<meta property="og:url" content="http://HITCaiDog.me/index.html">
+<meta name="description" content="以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。
+Beautiful Soup简介Beautiful Soup其实就是python的一个库，最主要的功能是从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beautiful Soup">
+<meta property="og:url" content="http://HITCaiDog.me/2016/01/25/Beautiful-Soup/index.html">
 <meta property="og:site_name" content="HITCaiDog's Blog">
-<meta property="og:description" content="有容乃大，无欲则刚">
+<meta property="og:description" content="以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。
+Beautiful Soup简介Beautiful Soup其实就是python的一个库，最主要的功能是从">
+<meta property="og:image" content="http://i.imgur.com/7nNQxO5.png">
+<meta property="og:updated_time" content="2016-01-26T11:19:08.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HITCaiDog's Blog">
-<meta name="twitter:description" content="有容乃大，无欲则刚">
+<meta name="twitter:title" content="Beautiful Soup">
+<meta name="twitter:description" content="以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。
+Beautiful Soup简介Beautiful Soup其实就是python的一个库，最主要的功能是从">
 
 
 
@@ -83,7 +88,7 @@
   };
 </script>
 
-  <title> HITCaiDog's Blog </title>
+  <title> Beautiful Soup | HITCaiDog's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -112,9 +117,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,24 +244,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -278,10 +266,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/01/25/Beautiful-Soup/" itemprop="url">
-                  Beautiful Soup
-                </a>
+                Beautiful Soup
               
             
           </h1>
@@ -354,9 +339,7 @@
       
 
       
-        
-          
-            <p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。</p>
+        <p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。</p>
 <h2 id="Beautiful_Soup_u7B80_u4ECB"><a href="#Beautiful_Soup_u7B80_u4ECB" class="headerlink" title="Beautiful Soup简介"></a>Beautiful Soup简介</h2><p>Beautiful Soup其实就是python的一个库，最主要的功能是从网页抓取数据。官方解释如下：</p>
 <blockquote>
 <p>Beautiful Soup提供一些简单的、python式的函数用于处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。<br>Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。你不需要考虑编码方式，除非文档没有指定一个编码方式。这时，Beautiful Soup就不能自动识别编码方式了，需要说明一下原始编码方式。<br>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略和强劲的速度。</p>
@@ -610,653 +593,86 @@ soup.find_all(has_class_but_no_id)
 </code></pre><p>内容太多了，要吐了简直，先整这些吧。</p>
 <p>大部分内容来自<a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">静觅 » Python爬虫入门八之Beautiful Soup的用法</a></p>
 
-          
-        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" itemprop="url">
-                  urllib2模块、cookielib模块及模拟登录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-24T19:53:16+08:00" content="2016-01-24">
-              2016-01-24
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/HTML-XML解析/" rel="tag">#HTML/XML解析</a>
           
-
+            <a href="/tags/python/" rel="tag">#python</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/24/urllib2模块、cookielib模块及模拟登录/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" class="leancloud_visitors" data-flag-title="urllib2模块、cookielib模块及模拟登录">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
-<blockquote>
-<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。</p>
-</blockquote>
-<h2 id="urlopen_28_29"><a href="#urlopen_28_29" class="headerlink" title="urlopen()"></a>urlopen()</h2><h3 id="u57FA_u672C_u4ECB_u7ECD"><a href="#u57FA_u672C_u4ECB_u7ECD" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urlopen()打开一个给定的URL字符串与Web连接，并返回文件类的对象，是最简单的请求方式。</p>
-<pre><code>urlopen(url[,data[,timeout]])
-</code></pre><blockquote>
-<p>其中url可以是url字符串，也可以是urllib2.Request类的实例。</p>
-<p>data是经过编码的POST数据(一般使用urllib.urlencode()进行编码)。</p>
-<p>timeout是可选的超时设置(单位：秒)，只对HTTP、HTTPS、FTP、FTPS有效。通过urlopen()函数是设置超时时间的最简单的方式，还可以通过socket模块或urllib2模块设置</p>
-</blockquote>
-<p>urlopen()一旦连接成功，将会返回一个文件类型对象，就像在目标路径打开了一个可读文件。假设文件对象是f，则其将支持可读方法，如f.read()、f.readline()、f.readlines()、f.close()、f.fileno()。</p>
-<pre><code>f.read([nbytes])     以字符串形式读取全部或nbytes个字节的数据
-f.readline()         以字符串形式读取单行数据
-f.readlines()        读取所有行并返回列表
-f.fileno()           返回文件句柄(整数描述符)
-f.close()            关闭URL连接
-f.info()             返回映射对象，带有与URL关联的元信息。对HTTP来讲，返回的服务器响应包含HTTP报头。对于FTP来说，返回的报头包含&apos;content-length&apos;，对于本地文件来说，返回的报头包含&apos;content-length&apos;和&apos;content-type&apos;字段
-f.getcode()          返回整型HTTP响应代码，例如，成功时返回200，未找到文件返回404
-f.geturl()           返回所返回数据的真实URL
-</code></pre><h3 id="u51E0_u5904_u5B9E_u4F8B_u89E3_u6790"><a href="#u51E0_u5904_u5B9E_u4F8B_u89E3_u6790" class="headerlink" title="几处实例解析"></a>几处实例解析</h3><pre><code>import urllib2
-
-response = urllib2.urlopen(&apos;http://www.douban.com&apos;)
-html = response.read()
-</code></pre><p>其中<code>response = urllib2.urlopen(&#39;http://www.douban.com&#39;)</code>实际上也可以看作：</p>
-<pre><code>request = urllib2.Request(&quot;http://www.douban.com&quot;)
-response = urllib2.urlopen(request)
-</code></pre><p>POST:</p>
-<pre><code>import urllib
-import urllib2
-
-url = &apos;http://www.douban.com&apos;
-info = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
-data = urllib.urlencode(info)
-request = urllib2.Request(url, data)
-response = urllib2.urlopen(request)
-page = response.read()
-</code></pre><p>伪装浏览器：</p>
-<pre><code>import urllib
-import urllib2
-
-url = &apos;http://www.douban.com&apos;
-user_agent = &apos;Mozilla/5.0 (Windows NT 6.1; WOW64)&apos;
-values = {&apos;name&apos;:&apos;username&apos;,&apos;location&apos;:&apos;China&apos;}
-header = {&apos;User-Agent&apos;:user_agent}
-
-data = urllib.urlencode(values)
-request = urllib2.Request(url, data, header)
-response = urllib2.urlopen(request)
-page = response.read()
-</code></pre><h2 id="u81EA_u5B9A_u4E49Opener"><a href="#u81EA_u5B9A_u4E49Opener" class="headerlink" title="自定义Opener"></a>自定义Opener</h2><h3 id="u57FA_u672C_u4ECB_u7ECD-1"><a href="#u57FA_u672C_u4ECB_u7ECD-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urllib2模块最强大的部分莫过于其的Opener，基本的urlopen()函数不支持验证、Cookie或其它HTTP高级功能。而通过build_opener()函数建立自定义Opener对象则可以支持这些功能。</p>
-<pre><code>build_opener([handler1 [, handler2, ……]])
-</code></pre><p>要打开URL，可构建自定义opener对象。参数handler1、handler2……都是特殊处理程序对象的实例。这些处理程序的目的是向得到的opener对象添加各种功能。可用的处理程序对象如下所示：</p>
-<pre><code>CacheFTPHandler         具有持久FTP连接的FTP处理程序
-FileHandler             打开本地文件
-FTPHandler              通过FTP打开URL
-HTTPBasicAuthHandler    基本的HTTP验证处理
-HTTPCookieProcessor     处理HTTP Cookie
-HTTPDefaultErrorHandler 通过引发HTTPError异常来处理HTTP错误
-HTTPDigestAuthHandler   HTTP摘要验证处理
-HTTPHandler             通过HTTP打开URL
-HTTPRedirectHandler     处理HTTP重定向
-HTTPSHandler            通过安全HTTP打开URL
-ProxyHandler            通过代理重定向请求
-ProxyBasicAuthHandler   基本的代理验证
-ProxyDigestAuthHandler  摘要代理验证
-UnknownHandler          处理所有未知URL的处理程序
-</code></pre><blockquote>
-<p>build_opener()返回的对象具有open(url[, data[, timeout]])方法，作用是根据各种处理程序提供的规则打开URL。</p>
-</blockquote>
-<pre><code>install_opener(opener)
-</code></pre><p>安装opener作为urlopen()使用的全局URL opener，即意味着以后调用urlopen()时都会使用安装的opener对象。opener通常是build_opener()创建的opener对象。</p>
-<h3 id="u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5"><a href="#u51E0_u79CD_u76F8_u5BF9_u590D_u6742_u60C5_u51B5_u7684_u89E3_u51B3_u65B9_u6CD5" class="headerlink" title="几种相对复杂情况的解决方法"></a>几种相对复杂情况的解决方法</h3><h4 id="cookie_u5904_u7406_uFF1A"><a href="#cookie_u5904_u7406_uFF1A" class="headerlink" title="cookie处理："></a>cookie处理：</h4><p>如果要管理HTTP cookie，需要创建添加了HTTPCookieProcessor处理程序的opener对象。默认情况下，HTTPCookieProcessor使用CookieJar对象，将不同类型的CookieJar对象作为HTTPCookieProcessor的参数提供，可支持不同的cookie处理。</p>
-<pre><code>cookie = cookielib.MozillaCookieJar()
-cookiehand = HTTPCookieProcessor(cookie)
-opener = urllib2.build_opener(cookiehand)
-u = opener.open(url)
-</code></pre><h4 id="u5BC6_u7801_u9A8C_u8BC1"><a href="#u5BC6_u7801_u9A8C_u8BC1" class="headerlink" title="密码验证"></a>密码验证</h4><pre><code>import urllib2
-
-auth = urllib2.HTTPBasicAuthHandler()
-auth.add_password(realm, url, username, passwd) #realm是与验证相关联的名称或描述信息(如:Administrator)，取决于服务器。
-opener = urllib2.build_opener(auth)
-u = opener.open(URL)
-</code></pre><h4 id="u4EE3_u7406"><a href="#u4EE3_u7406" class="headerlink" title="代理"></a>代理</h4><p>urllib2会自动检测代理设置，默认使用环境变量http_proxy来设置HTTP Proxy。通常情况下是有帮助的，但是某些情况下也可能会造成一些麻烦（因为通过代理获取本地URL资源时会被阻止，因此如果正在通过代理访问internet，则使用脚本测试本地服务器时必须阻止urllib2模块使用代理）。因此，如果想在程序中明确Proxy的使用而不受环境变量的影响，可以创建ProxyHandler实例，并将实例作为build_opener()的参数来实现。</p>
-<pre><code>import urllib2
-
-enable_proxy = True
-proxy_handler = urllib2.ProxyHandler({&apos;http&apos;:&apos;http://some-proxy.com:8080&apos;})
-null_proxy_handler = urllib2.ProxyHandler({})
-
-if enable_proxy:
-    opener = urllib2.build_opener(proxy_handler)
-else:
-    opener = urllib2.build_opener(null_proxy_handler)
-
-urllib2.install_opener(opener)
-</code></pre><h1 id="cookielib_u6A21_u5757"><a href="#cookielib_u6A21_u5757" class="headerlink" title="cookielib模块"></a>cookielib模块</h1><p>cookielib模块的主要作用是提供可存储cookie的对象，以便于与urllib2模块配合使用来访问internet资源。例如可以利用本模块的CookieJar类的对象来捕获cookie并在后续连接请求是重新改送。cookielib模块用到的对象主要有以下几个：CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJar。关系如下：</p>
-<p><img src="http://i.imgur.com/mHU9T66.png" alt=""></p>
-<h2 id="CookieJar_28_29"><a href="#CookieJar_28_29" class="headerlink" title="CookieJar()"></a>CookieJar()</h2><p>管理HTTP cookie值、存储HTTP请求生成的cookie、向传出的HTTP请求添加cookie的对象。整个cookie都存储在内存中，对CookieJar实例进行垃圾回收后cookie也将丢失。</p>
-<h2 id="FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#FileCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="FileCookieJar(filename, delayload = None, policy = None)"></a>FileCookieJar(filename, delayload = None, policy = None)</h2><p>创建FileCookieJar实例，检索cookie信息并将cookie存储到文件中。filename是存储cookie的文件名。delayload为True时支持延迟访问文件，即只有在需要时才读文件或在文件中存储数据。</p>
-<h2 id="MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#MozillaCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="MozillaCookieJar(filename, delayload = None, policy = None)"></a>MozillaCookieJar(filename, delayload = None, policy = None)</h2><p>创建与Mozilla浏览器cookies.txt兼容的FileCookieJar实例。</p>
-<h2 id="LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29"><a href="#LWPCookieJar_28filename_2C_delayload__3D_None_2C_policy__3D_None_29" class="headerlink" title="LWPCookieJar(filename, delayload = None, policy = None)"></a>LWPCookieJar(filename, delayload = None, policy = None)</h2><p>创建与libwww-per的Set-Cookie3文件格式兼容的FileCookieJar实例。</p>
-<h1 id="u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B"><a href="#u6A21_u62DF_u767B_u5F55_u5B9E_u4F8B" class="headerlink" title="模拟登录实例"></a>模拟登录实例</h1><h2 id="u6A21_u62DF_u767B_u5F55_u4EBA_u4EBA_u7F51"><a href="#u6A21_u62DF_u767B_u5F55_u4EBA_u4EBA_u7F51" class="headerlink" title="模拟登录人人网"></a>模拟登录人人网</h2><pre><code>#! /usr/bin/env python
-# -*- coding:utf-8 -*-
-import urllib2
-import urllib
-import cookielib
-
-data = {&quot;email&quot;: &quot;username&quot;, &quot;password&quot;: &quot;passwd&quot;, &quot;autoLogin&quot;:&quot;true&quot;}  #登陆用户名和密码
-post_data = urllib.urlencode(data) # urllib进行编码
-cookie = cookielib.MozillaCookieJar(&apos;cookies.txt&apos;) # 初始化一个CookieJar来处理Cookie
-opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
-urllib2.install_opener(opener)
-headers = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
-request = urllib2.Request(&quot;http://www.renren.com/PLogin.do&quot;,post_data,headers)
-content = opener.open(request)
-cookie.save() #保存cookie
-print content.read()
-</code></pre><h2 id="u5229_u7528cookie_u767B_u5F55_u4EBA_u4EBA_u7F51"><a href="#u5229_u7528cookie_u767B_u5F55_u4EBA_u4EBA_u7F51" class="headerlink" title="利用cookie登录人人网"></a>利用cookie登录人人网</h2><pre><code>#! /usr/bin/env python
-# -*- coding:utf-8 -*-
-import urllib2
-import cookielib
-
-cookie = cookielib.MozillaCookieJar() # 初始化一个CookieJar来处理Cookie
-cookie.load(&apos;cookies.txt&apos;,  ignore_discard = True,  ignore_expires = True) #读取已保存的cookie
-opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie))
-urllib2.install_opener(opener)
-header = {&quot;User-agent&quot;:&quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1&quot;}
-request = urllib2.Request(&quot;http://www.renren.com&quot;,headers = header)
-content = opener.open(request)
-print content.read()
-</code></pre>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/01/24/urllib2模块、cookielib模块及模拟登录/" rel="next" title="urllib2模块、cookielib模块及模拟登录">
+                <i class="fa fa-chevron-left"></i> urllib2模块、cookielib模块及模拟登录
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/01/23/Git常用命令/" itemprop="url">
-                  Git常用命令
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-23T11:24:07+08:00" content="2016-01-23">
-              2016-01-23
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/23/Git常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/23/Git常用命令/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/01/23/Git常用命令/" class="leancloud_visitors" data-flag-title="Git常用命令">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>转自<a href="http://notes.xiamo.tk/2015-06-29-Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">夏末’S NOTE</a></p>
-<h2 id="u57FA_u672C_u914D_u7F6E_u547D_u4EE4"><a href="#u57FA_u672C_u914D_u7F6E_u547D_u4EE4" class="headerlink" title="基本配置命令"></a>基本配置命令</h2><h3 id="Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868"><a href="#Git_u5E38_u7528_u547D_u4EE4_u901F_u67E5_u8868" class="headerlink" title="Git常用命令速查表"></a>Git常用命令速查表</h3><p><img src="http://i.imgur.com/dHE4dkR.jpg" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/23/Git常用命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/22/TLS协议握手过程/" itemprop="url">
-                  TLS协议握手过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-22T20:33:26+08:00" content="2016-01-22">
-              2016-01-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/协议/" itemprop="url" rel="index">
-                    <span itemprop="name">协议</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/22/TLS协议握手过程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/TLS协议握手过程/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/01/22/TLS协议握手过程/" class="leancloud_visitors" data-flag-title="TLS协议握手过程">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B"><a href="#TLS_u63E1_u624B_u6574_u4E2A_u8FC7_u7A0B" class="headerlink" title="TLS握手整个过程"></a>TLS握手整个过程</h2><p><img src="http://i.imgur.com/bEyG2V7.png" alt=""></p>
-<h2 id="Client_Hello"><a href="#Client_Hello" class="headerlink" title="Client Hello"></a>Client Hello</h2><p>这是TLS握手的第一步，由客户端发起请求。此协议主要包括了一个客户端生成的随机字符串（用来下面生成session key），还有客户端支持的加密套件列表。
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/22/TLS协议握手过程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/31/Birthday/" itemprop="url">
-                  Birthday
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-31T20:41:04+08:00" content="2015-12-31">
-              2015-12-31
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/31/Birthday/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/Birthday/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2015/12/31/Birthday/" class="leancloud_visitors" data-flag-title="Birthday">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>Welcome to <a href="http://hexo.io/">HITCaiDog’s Blog</a>! This is my very first post. There are some important steps listed as follows. </p>
-<h2 id="Preparation_28For_Windows_29"><a href="#Preparation_28For_Windows_29" class="headerlink" title="Preparation(For Windows)"></a>Preparation(For Windows)</h2><p><a href="http://nodejs.org/">node.js</a></p>
-<p><a href="http://git-scm.com/">git</a></p>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Run_Git_CMD_2Cinput"><a href="#Run_Git_CMD_2Cinput" class="headerlink" title="Run Git CMD,input"></a>Run Git CMD,input</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/31/Birthday/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/01/25/Beautiful-Soup/"
+     data-title="Beautiful Soup"
+     data-content=""
+     data-url="http://HITCaiDog.me/2016/01/25/Beautiful-Soup/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/25/Beautiful-Soup/"
+           data-title="Beautiful Soup" data-url="http://HITCaiDog.me/2016/01/25/Beautiful-Soup/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1276,8 +692,17 @@ print content.read()
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -1375,6 +800,23 @@ print content.read()
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Beautiful_Soup_u7B80_u4ECB"><span class="nav-number">1.</span> <span class="nav-text">Beautiful Soup简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Beautiful_Soup_u5B89_u88C5"><span class="nav-number">2.</span> <span class="nav-text">Beautiful Soup安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u521B_u5EFABeautiful_Soup_u5BF9_u8C61"><span class="nav-number">3.</span> <span class="nav-text">创建Beautiful Soup对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u56DB_u5927_u5BF9_u8C61_u79CD_u7C7B"><span class="nav-number">4.</span> <span class="nav-text">四大对象种类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tag"><span class="nav-number">4.1.</span> <span class="nav-text">Tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NavigableString"><span class="nav-number">4.2.</span> <span class="nav-text">NavigableString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">4.3.</span> <span class="nav-text">BeautifulSoup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comment"><span class="nav-number">4.4.</span> <span class="nav-text">Comment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u904D_u5386_u6587_u6863_u6811"><span class="nav-number">5.</span> <span class="nav-text">遍历文档树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u76F4_u63A5_u5B50_u8282_u70B9"><span class="nav-number">5.1.</span> <span class="nav-text">直接子节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#contents"><span class="nav-number">5.1.1.</span> <span class="nav-text">.contents</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#children"><span class="nav-number">5.1.2.</span> <span class="nav-text">.children</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B50_u5B59_u7ED3_u70B9"><span class="nav-number">5.2.</span> <span class="nav-text">子孙结点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u641C_u7D22_u6587_u6863_u6811"><span class="nav-number">6.</span> <span class="nav-text">搜索文档树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#find_all_28name_2C_attrs_2C_recursive_2C_text_2C_**kwargs_29"><span class="nav-number">6.1.</span> <span class="nav-text">find_all(name, attrs, recursive, text, **kwargs)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#name_u53C2_u6570"><span class="nav-number">6.1.1.</span> <span class="nav-text">name参数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u4F20_u5B57_u7B26_u4E32"><span class="nav-number">6.1.1.1.</span> <span class="nav-text">传字符串</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F20_u6B63_u5219_u8868_u8FBE_u5F0F"><span class="nav-number">6.1.2.</span> <span class="nav-text">传正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F20_u5217_u8868"><span class="nav-number">6.1.3.</span> <span class="nav-text">传列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F20_u65B9_u6CD5"><span class="nav-number">6.1.4.</span> <span class="nav-text">传方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#keyword_u53C2_u6570"><span class="nav-number">6.2.</span> <span class="nav-text">keyword参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS_u9009_u62E9_u5668"><span class="nav-number">7.</span> <span class="nav-text">CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u901A_u8FC7_u6807_u7B7E_u540D"><span class="nav-number">7.1.</span> <span class="nav-text">通过标签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u901A_u8FC7_u7C7B_u540D"><span class="nav-number">7.2.</span> <span class="nav-text">通过类名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7EC4_u5408_u67E5_u627E"><span class="nav-number">7.3.</span> <span class="nav-text">组合查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5C5E_u6027_u67E5_u627E"><span class="nav-number">7.4.</span> <span class="nav-text">属性查找</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -1455,6 +897,167 @@ print content.read()
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
