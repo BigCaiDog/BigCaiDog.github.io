@@ -4,7 +4,7 @@
   <subtitle><![CDATA[平常心,平常心！！！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://HITCaiDog.me/"/>
-  <updated>2016-01-26T11:19:08.289Z</updated>
+  <updated>2016-01-26T12:37:00.964Z</updated>
   <id>http://HITCaiDog.me/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://HITCaiDog.me/2016/01/25/Beautiful-Soup/"/>
     <id>http://HITCaiDog.me/2016/01/25/Beautiful-Soup/</id>
     <published>2016-01-25T03:06:14.000Z</published>
-    <updated>2016-01-26T11:19:08.289Z</updated>
-    <content type="html"><![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。</p>
+    <updated>2016-01-26T12:37:00.964Z</updated>
+    <content type="html"><![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。<a id="more"></a></p>
 <h2 id="Beautiful_Soup_u7B80_u4ECB"><a href="#Beautiful_Soup_u7B80_u4ECB" class="headerlink" title="Beautiful Soup简介"></a>Beautiful Soup简介</h2><p>Beautiful Soup其实就是python的一个库，最主要的功能是从网页抓取数据。官方解释如下：</p>
 <blockquote>
 <p>Beautiful Soup提供一些简单的、python式的函数用于处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。<br>Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。你不需要考虑编码方式，除非文档没有指定一个编码方式。这时，Beautiful Soup就不能自动识别编码方式了，需要说明一下原始编码方式。<br>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略和强劲的速度。</p>
@@ -275,7 +275,8 @@ soup.find_all(has_class_but_no_id)
 <p>大部分内容来自<a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">静觅 » Python爬虫入门八之Beautiful Soup的用法</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/X]]>
+    <![CDATA[<p>以往解析HTML\XML内容直接用正则表达式匹配，正则表达式着实是很强大的，不过对于初学者来说编写一个高效准确的正则表达式，还是有难度的。所以今天来学习一个更强大的工具：Beautiful Soup,用python写的一个HTML/XML的解析器，可以很好的提取HTML/XML标签中的内容。]]>
+    
     </summary>
     
       <category term="HTML/XML解析" scheme="http://HITCaiDog.me/tags/HTML-XML%E8%A7%A3%E6%9E%90/"/>
@@ -293,10 +294,10 @@ soup.find_all(has_class_but_no_id)
     <link href="http://HITCaiDog.me/2016/01/24/urllib2%E6%A8%A1%E5%9D%97%E3%80%81cookielib%E6%A8%A1%E5%9D%97%E5%8F%8A%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95/"/>
     <id>http://HITCaiDog.me/2016/01/24/urllib2模块、cookielib模块及模拟登录/</id>
     <published>2016-01-24T11:53:16.000Z</published>
-    <updated>2016-01-24T16:18:32.242Z</updated>
+    <updated>2016-01-26T12:36:51.912Z</updated>
     <content type="html"><![CDATA[<h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
 <blockquote>
-<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。</p>
+<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。<br><a id="more"></a></p>
 </blockquote>
 <h2 id="urlopen_28_29"><a href="#urlopen_28_29" class="headerlink" title="urlopen()"></a>urlopen()</h2><h3 id="u57FA_u672C_u4ECB_u7ECD"><a href="#u57FA_u672C_u4ECB_u7ECD" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>urlopen()打开一个给定的URL字符串与Web连接，并返回文件类的对象，是最简单的请求方式。</p>
 <pre><code>urlopen(url[,data[,timeout]])
@@ -427,7 +428,10 @@ content = opener.open(request)
 print content.read()
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用]]>
+    <![CDATA[<h1 id="urllib2_u6A21_u5757"><a href="#urllib2_u6A21_u5757" class="headerlink" title="urllib2模块"></a>urllib2模块</h1><p>urllib2模块与urllib模块类似，用来打开URL并从中获取数据。与urllib模块不同的是，urllib2不仅可以使用urlopen()函数还可以自定义Opener来访问网页，因此它可以处理更复杂URL的打开问题，一个例子就是有基本认证（用户名和密码）需求的Web站点。</p>
+<blockquote>
+<p>注意：urlretrieve()函数是urllib模块中的，且urllib2中不存在。但是使用urllib2时一般离不开urllib模块，因为POST的数据需要使用urllib.urlencode()函数来编码。<br>]]>
+    
     </summary>
     
       <category term="cookielib" scheme="http://HITCaiDog.me/tags/cookielib/"/>
